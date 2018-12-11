@@ -11,6 +11,13 @@
         li:first-of-type {background: slategrey} /*primo di quel tipo a seconda del suo genitore*/
         li:nth-of-type(2) {background: mediumseagreen} /*l'ennesimo di quel tipo a seconda del suo genitore*/
         li:last-of-type {background:antiquewhite} /*ultimo di quel tipo a seconda del suo genitore*/
+
+        /* Cover: l'importante è che copra tutto lo spazio disponibile, se poi viene tagliata fa lo stesso */
+        /* Contain: l'importante è che l'immagine si veda tutta, se poi ci sono dell bande bianche fa lo stesso */
+        body {background: url(https://i.imgur.com/EdAGGFS.jpg) center center fixed no-repeat; background-size: cover; color: aqua;}
+
+        #theDiv {border: 10px dashed blue; padding: 50px; position: fixed; left: 430px; top: 280px; width: 1280px; height: 720px;
+         color: black; font-weight: bold; font-size: 80px; background-color:burlywood; background-clip: border-box}
     </style>
 
 </head>
@@ -42,6 +49,10 @@
         <li>Pesche</li>
         <li><a href="https://www.lul.com">Albicocche</a></li>
     </ul>
+
+    <div id="theDiv">
+        <p> Contenuto bello di una pagina gestita con fogli di stile CSS3 </p>
+    </div>
 
 </body>
 </html>
