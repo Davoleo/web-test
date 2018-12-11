@@ -18,11 +18,16 @@
 
         #theDiv {border: 10px dashed blue; padding: 50px; position: fixed; left: 430px; top: 280px; width: 1280px; height: 720px;
          color: black; font-weight: bold; font-size: 80px; background-color:burlywood; background-clip: border-box}
+
+        /* parameters {traslazione orizzontale | traslazione verticale | } */
+         .EffettiTesto {text-shadow: 2px 2px 8px #00ff00}
+
+         @font-face {font-family: font-tremante; src: url('font/ITCBLKAD.ttf')}
     </style>
 
 </head>
 <body>
-<h1>TITOLO</h1>
+<h1 style="font-family: font-tremante" class="EffettiTesto"> TITOLO</h1>
 
 <div>
     <ul id="primaLista">
@@ -51,7 +56,8 @@
     </ul>
 
     <div id="theDiv">
-        <p> Contenuto bello di una pagina gestita con fogli di stile CSS3 </p>
+        <p style="border: 1px solid; width: 600px; word-wrap: break-word;" class="EffettiTesto"> Contenutooooooooooo bello di una pagina gestita con fogli di stile CSS3 </p>
+        <p style="overflow: hidden; width: 600px; border: 2px solid;  float: right;" class="EffettiTesto">Ciaoooooooooooooooooooooo benvenuto su questa pagina inutile</p>
     </div>
 
 </body>
