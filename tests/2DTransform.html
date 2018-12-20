@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trasformazioni 2D</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <style>
+        p {font-size: 100px; transform: rotate(-1rad)}
+        div {width: 300px; height: 300px; background-color: red; transform: translateX(150px) rotate(1rad) scale(2, 1) skew(150deg, 20deg)}
+    </style>
+</head>
+
+
+<body>
+    <div><p>Ciao!</p></div>  
+    
+    <script>
+        gradi=0;
+
+        function ruota()
+        {
+            gradi += 5;
+            $('p').css('transform', 'rotate('+gradi + 'deg)');
+        }
+
+        setInterval(ruota, 50)
+
+    </script>
+</body>
+
+</html>
