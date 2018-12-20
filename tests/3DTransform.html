@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <style type="text/css">
+        div {width: 200px; height: 100px; background-color: yellowgreen; font-size: 100px; float: left;}
+    </style>
+
+    <title>3D Transform</title>
+</head>
+<body>
+
+    <div id="divSx">
+        3D
+    </div>
+
+    <div id="divDx" style="position: relative; left: 30px">
+        <img width="200px" src="https://i.ytimg.com/vi/XooEAb_o0E4/maxresdefault.jpg" alt="CANE.exe">
+    </div>
+    
+    <br>
+    <button id="rotX" onclick="startRotateX()" style="position: absolute; top: 150px; left: 0px">ROTATE X</button>
+    <button id="rotY" onclick="startRotateY()" style="position: absolute; top: 150px; left: 100px">ROTATE Y</button>
+    <button id="rotZ" onclick="startRotateZ()" style="position: absolute; top: 150px; left: 200px">ROTATE Z</button>
+    <button id="rotXYZ" onclick="startRotateXYZ()" style="position: absolute; top: 150px; left: 300px">ROTATE ASDF</button>
+
+    <script>
+        gradi = 0;
+
+        function startRotateX()
+        {setInterval(ruotaX, 50)}
+
+        function startRotateY()
+        {setInterval(ruotaY, 50)}
+
+        function startRotateZ()
+        {setInterval(ruotaZ, 50)}
+
+        function startRotateXYZ()
+        {setInterval(ruotaXYZ, 50)}
+
+        function ruotaX()
+        {
+            gradi += 5;
+
+            $('#rotX').html(gradi);
+            $('#divSx').css('transform', 'rotateX('+gradi + 'deg) ');
+            $('#divDx').css('transform', 'rotateX('+gradi + 'deg) ');
+        }
+
+        function ruotaY()
+        {
+            gradi += 5;
+
+            $('#rotY').html(gradi);
+            $('#divSx').css('transform', 'rotateY('+gradi + 'deg) ');
+            $('#divDx').css('transform', 'rotateY('+gradi + 'deg) ');
+        }
+
+        function ruotaZ()
+        {
+            gradi += 5;
+
+            $('#rotZ').html(gradi);
+            $('#divSx').css('transform', 'rotateZ('+gradi + 'deg) ');
+            $('#divDx').css('transform', 'rotateZ('+gradi + 'deg) ');
+        }
+
+        function ruotaXYZ()
+        {
+            gradi += 5;
+
+            $('#rotXYZ').html(gradi);
+            $('#divSx').css('transform', 'rotate3D(10, 100, 10,'+gradi + 'deg) ');
+            $('#divDx').css('transform', 'rotate3D(30, 30, 30, '+gradi + 'deg) ');
+        }
+    </script>
+</body>
+</html>
