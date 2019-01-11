@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Javascript</title>
+
+    <style type="text/css">
+        table{border-style: dashed}
+    </style>
 </head>
 <body>
     <h1>TEST</h1>
 
-    <input type="number" id="eta" placeholder="Write your age">
+    <table>
+        <tr>
+            <td>Text</td>
+            <td><input type="text" id="text_box"></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="number" id="eta" placeholder="Write your age"></td>
+        </tr>
+    </table>
+
     <input type="button" id="btn_OK" value="OK">
 
-<script type="text/javascript">
+    <script type="text/javascript" src="lib/jquery-3.3.1.js"> </script>
+
+    <script type="text/javascript">
+        function write()
+        {
+            $("#text_box").val("I never get anything to work :(");
+        }
+
+        $("#text_box").blur(write())
+    </script>
+
+<script type="text/javascript" title="Basics">
     //Constant values
     const stuff = 3,
           ba1 = 10,
@@ -19,7 +44,7 @@
     var bambino_asiatico = 0;
 
     //Shows a message box containing this message
-    alert("Hello World!");
+    //alert("Hello World!");
     //Outputs a console message
     console.log(bambino_asiatico);
 
@@ -39,7 +64,7 @@
 
     if(!Number.isSafeInteger(n2))
     {
-        alert("WARNING: this is not a safe number")
+        //alert("WARNING: this is not a safe number")
     }
 
     var x = 0.1 + 0.2;
@@ -66,9 +91,7 @@
     //Valori speciali
     //Undefined: Valore non assegnato
     //Null: forzato da noi, valore nullo
-    //NaN: Not a Number, non si tratta di un valore numerico
-
-
+    //NaN: Not a Number, non si tratta di un valore numeric
 
 </script>
 </body>
