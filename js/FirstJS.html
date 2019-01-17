@@ -26,16 +26,21 @@
 
     <script type="text/javascript" src="lib/jquery-3.3.1.js"> </script>
 
+    <script type="text/javascript" src="basics.js"></script>
+
     <script type="text/javascript">
         function write()
         {
             $("#text_box").val("I never get anything to work :(");
         }
 
-        $("#text_box").blur(write())
+        $("#text_box").blur(write());
     </script>
 
 <script type="text/javascript" title="Basics">
+    //Removes jQuery alias: $
+    //$.noConflict();
+
     //Constant values
     const stuff = 3,
           ba1 = 10,
@@ -86,7 +91,16 @@
     console.log(z);
 
     if (NaN != NaN)
-        console.log("Mi Arrendo!")
+        console.log("Mi Arrendo!");
+
+    var string1 = "ciao";
+    console.log(string1 + " - " + string1.length);
+
+    var string1 = "֎";
+    console.log(string1 + " - " + string1.length);
+
+    var string1 = "ԮՓԩ";
+    console.log(string1 + " - " + string1.length);
 
     //Valori speciali
     //Undefined: Valore non assegnato
