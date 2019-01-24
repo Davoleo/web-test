@@ -13,8 +13,12 @@
 
     <table>
         <tr>
-            <td>Text</td>
-            <td><input type="text" id="text_box"></td>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Surname</td>
+            <td><input type="text" id="surname"></td>
         </tr>
         <tr>
             <td>Age</td>
@@ -22,91 +26,13 @@
         </tr>
     </table>
 
-    <input type="button" id="btn_OK" value="OK">
+    <p id="demo"></p>
 
-    <script type="text/javascript" src="lib/jquery-3.3.1.js"> </script>
+    <input type="button" id="btn_OK" value="OK" onclick="showDate(); set_yellow_background()">
 
-    <script type="text/javascript" src="basics.js"></script>
-
-    <script type="text/javascript">
-        function write()
-        {
-            $("#text_box").val("I never get anything to work :(");
-        }
-
-        $("#text_box").blur(write());
-    </script>
-
-<script type="text/javascript" title="Basics">
-    //Removes jQuery alias: $
-    //$.noConflict();
-
-    //Constant values
-    const stuff = 3,
-          ba1 = 10,
-          _asdf = 93;
-    //Variable_values
-    var bambino_asiatico = 0;
-
-    //Shows a message box containing this message
-    //alert("Hello World!");
-    //Outputs a console message
-    console.log(bambino_asiatico);
-
-    var n1 = Number.MAX_SAFE_INTEGER;
-    var n2 = n1 + 1;
-    var n3 = n2 + 2;
-
-    console.log(n1);
-    console.log(n2);
-    console.log(n3);
-
-    console.log(7==9);
-    console.log(7==7);
-    console.log("cane" == "cane"); //== Weak equals
-    console.log(n2 === n2 + 1); //=== Strict equals
-    console.log("Safe: " + Number.isSafeInteger(n2));
-
-    if(!Number.isSafeInteger(n2))
-    {
-        //alert("WARNING: this is not a safe number")
-    }
-
-    var x = 0.1 + 0.2;
-    console.log(x);
-    console.log(Math.abs(x-3) < 0.00001);
-    console.log(0.1+0.2===0.3);
-    console.log(Number.MIN_VALUE);
-
-    const pi_greco = 3.14;
-
-    var y;
-    console.log(y);
-    //NaN Not a Number
-    var z = 10 / "cucu!";
-    console.log(z);
-    z = 0/0;
-    console.log(z);
-    z = Math.sqrt(-8);
-    console.log(z);
-
-    if (NaN != NaN)
-        console.log("Mi Arrendo!");
-
-    var string1 = "ciao";
-    console.log(string1 + " - " + string1.length);
-
-    var string1 = "֎";
-    console.log(string1 + " - " + string1.length);
-
-    var string1 = "ԮՓԩ";
-    console.log(string1 + " - " + string1.length);
-
-    //Valori speciali
-    //Undefined: Valore non assegnato
-    //Null: forzato da noi, valore nullo
-    //NaN: Not a Number, non si tratta di un valore numeric
-
-</script>
 </body>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"> </script>
+
+<script type="text/javascript" src="basics.js"></script>
 </html>

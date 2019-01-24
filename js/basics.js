@@ -1,15 +1,56 @@
-
+//////////////////////////////////
+//      Coded by Davoleo        //
+//////////////////////////////////
 $(function () {
-    $("#text_box").blur(force_maiusc());
+    $("#surname").blur(format_text_box)
 });
 
-function force_maiusc() {
-    var content = $("#text_box").val();
-    $("#text_box").val(content.toUpperCase());
+function format_text_box() {
+    var name = $("#name").val();
+    var surname = $("#surname").val();
+    
+    if (isUpperCaseString(name))
+    {
+        $("#surname").val(surname.toUpperCase());
+    }
+    else if (isUpperCaseChar(name[0]))
+    {
+        //Strings in Javascript are read-only!
+        //surname[0] = "Z"
+        // ^^^ this would NOT work
+        surname = capitalize(surname);
+    }
+    else
+    {
+        if (isLowerCaseString(name))
+            surname = capitalize(surname);
+    }
+}
+
+function capitalize(string) {
+    var firstChar = string[0].toUpperCase();
+    var remainingString = string.toString().substring(1).toLowerCase();
+    return firstChar + remainingString;
+}
+
+function isLowerCaseString(string) {
+    return string === string.toString().toLowerCase()
+}
+
+function isUpperCaseChar(char) {
+    return String(char) === String(char).toUpperCase();
+}
+
+function isUpperCaseString(string) {
+    return string === string.toString().toUpperCase();
+}
+
+function showDate() {
+    document.getElementById('demo').innerHTML = Date();
 }
 
 function set_yellow_background() {
-    $("#eta").css("background-color", "yellow")
+    $("#eta").css("background-color", "yellow");
 }
 
 var test = "😪";
