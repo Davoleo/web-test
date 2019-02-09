@@ -8,10 +8,10 @@
  * The "sandwich" variable is a local variable: It can be called just inside the same code block it was initialized in (In fact it's printed just one time on the doc)
  * @type {string}
  */
-var girl = " Ryuko ";
+let girl = " Ryuko ";
 
 function print() {
-    var sandwich = "panino";
+    let sandwich = "panino";
     document.write(girl + "<br>");
     document.write(sandwich + "<br>");
 }
@@ -19,7 +19,8 @@ function print() {
 print();
 
 document.write(girl + "<br>");
-document.write(sandwich + "<br>");
+//document.write(sandwich + "<br>");
+// this wouldn't work ^^^
 
 //--------------------------------------------------------------------------------------------------------------------
 
@@ -40,3 +41,48 @@ v -= 24 : Subtracts the value on the right to the value of variable on the left 
 v *= 24 : Multiplies the value on the right to the value of variable on the left and saves the new v value
 v /= 24 : Divides the value on the right to the value of variable on the left and saves the new v value
  */
+
+document.write("<br>");
+
+/**
+ * Relational Operators:
+ * ==       if stuff on the left is equal to stuff on the right it's true
+ * ===      more strict version of ==
+ * !=       if stuff on the left is not equal to stuff on the right it's true
+ * > (=>)        if stuff on the left is more (or equals) than stuff on the right it outputs true
+ * < (=<)       if stuff on the left is less (or equals) than stuff on the right it outputs true
+ *
+ */
+let apples = 24;
+let hotdogs = 37;
+
+/**
+ * The if statement:
+ * If the boolean condition written in "()" is true it runs the codeblock inside "{}"
+ * If theere's just one statement inside the body you can omit {}
+ * if the boolean condition written in "()" is false it doesn't run the codeblock inside {} AND, if present it runs the code in the "else{}" code block
+ */
+if (apples < hotdogs) {
+    document.write("The condition is true<br>");
+}
+else {
+    document.write("The condition is false<br>")
+}
+
+document.write("<br>");
+
+
+document.write("Apples is: " + apples + "<br><input type=\"button\" value=\"Switch Odd Even\" onclick=\"switchEvenOdd()\">");
+
+function switchEvenOdd() {
+    if (apples % 2 === 0)
+    {
+        apples++;
+        alert("The apples variable is even - value: " + apples);
+    }
+    else
+    {
+        apples--;
+        alert("The apples variable is odd - value: " + apples);
+    }
+}

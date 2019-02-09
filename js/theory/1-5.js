@@ -32,7 +32,8 @@ document.write("And I really like eating rice.<br><br>");
 /**
  * This is a variable, a kind of placeholder to store some kind of value
  *
- * - var is the keyword that introduces variables
+ * - var is a keyword that introduces variables (localized to the closest function / can be called before declaration)
+ * - let is a keywork that introduces variables (localized to the closest code block / cannot be called before declaration)
  * - x is the identifier, it's the name of the variable, and it's used as placeholder for the value of the variable (It's case sensitive)
  * - = is the assignment operator, it assigns what's on the right to what is on the left (in this case it assigns 40 to the variable x)
  *
