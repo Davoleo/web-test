@@ -86,3 +86,60 @@ function switchEvenOdd() {
         alert("The apples variable is odd - value: " + apples);
     }
 }
+
+document.write("<br><br>");
+
+/**
+ * Nested if statements
+ */
+let firstName = "Jack";
+let lastName = "Black";
+
+if (firstName === "Jack")
+{
+    if (lastName === "Black")
+    {
+        document.write("Welcome " + firstName + " " + lastName + "!<br>")
+    }
+    else
+    {
+        document.write("Welcome unknown person")
+    }
+}
+
+document.write("<br><br>");
+
+/**
+ * Complex Conditions
+ * Logic Operators
+ *
+ * &&       if both conditions on the left and on the right are true it returns true
+ * ||       if both conditions on the left and on the right are false it returns false
+ */
+let first = "Jack";
+let last = "Black";
+
+if (first === "Jack" && last === "Black")
+    document.write("Complex Conditions");
+
+document.write("<br><br>");
+/**
+ * Switch Statement
+ * @type {string}
+ */
+var girll = "Natalie";
+
+switch (girll) {
+
+    case "Natalie":
+        document.write("you must like garden state");
+        break;
+    case "Ashley":
+        document.write("oo");
+        break;
+    case "Ryuko":
+        document.write("best gurl");
+        break;
+    default:
+        document.write("meh, unexpected gurl");
+}
