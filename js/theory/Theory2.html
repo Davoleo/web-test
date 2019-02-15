@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 2</title>
+</head>
+<body onload="onLoad();">
+
+<!-- Event handlers lets you run javascript code when the user triggers a specific event (Example: onclick) -->
+<form>
+    <input type="button" value="CLICK ME" onclick="alert('aah!'); alert('eventhandler');" onmouseout="onHover();">
+</form>
+<br>
+<a href="https://davoleo.github.io/Website/" onmouseover="onHover();">Hover over me!</a>
+<br>
+
+random text on the screen!
+
+<script type="text/javascript" src="22-27.js"></script>
+
+<!--
+Event handlers:
+onclick: called when you click a certain component of the web page
+onmouseover: called when you hover over a certain component of the web page
+onmouseout: called when you finish to hover over a certain component of the web page
+onload: specific <body> event handler, called when the page is completely loaded
+onunload: should be called when you leave the web page (it often doesn't work)
+
+-->
+
+</body>
+</html>
