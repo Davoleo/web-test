@@ -32,8 +32,35 @@ ids[0] = 59;
 document.write(people[0] + "<br><br>");
 
 //length: returns the number of elements of an array
-document.write(people.length + "<br>");
+document.write(people.length + "<br><br>");
 
 //concat: returns a new concatenated array from 2 different arrays
 let concatArray = initials.concat(people);
-document.write(concatArray[11] + "<br>");
+document.write(concatArray[11] + "<br><br>");
+
+//join: takes all the items of an array and converts them into a string
+let joinedArray = people.join(" - ");
+document.write(joinedArray  + "<br><br>");
+
+//pop: removes the last element from an array
+let poppedArray = people;
+document.write("Array Lenght: " +  people.length + "<br>");
+poppedArray.pop();
+document.write("Array Lenght: " + poppedArray.length + "<br><br>");
+
+//reverse: reverses the order of the item in the array
+document.write(people.reverse() + "<br>");
+document.write(people.reverse() + "<br><br>");
+
+//push: adds an item at the end of the array
+let pushedArray = people;
+document.write(pushedArray + "<br>");
+pushedArray.push("GianPiero");
+document.write(pushedArray + "<br><br>");
+//^ To restore the original array
+
+//sort: sorts the elements of the array in alphabetical order
+let sortedArray = people;
+document.write(sortedArray + "<br>");
+sortedArray.sort();
+document.write(sortedArray + "<br><br>");
