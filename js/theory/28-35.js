@@ -64,3 +64,22 @@ let sortedArray = people;
 document.write(sortedArray + "<br>");
 sortedArray.sort();
 document.write(sortedArray + "<br><br>");
+
+//Prompts --------------------------------------------------
+
+let name = prompt("Enter your name: ", "");
+document.write("Hello " + name + "!<br>");
+
+let faveFoods = new Array(3);
+
+for (i = 0; i < 3; i++)
+{
+    faveFoods[i] = prompt("Enter fave food (" + i + " of 3)", "");
+}
+document.write("Favourite foods: " + faveFoods + "<br><br>");
+
+//Associative Arrays --------------------------------------
+var associativeArray = [];
+associativeArray["color"] = "green";
+associativeArray["food"] = "pizza";
+document.write( "Food = " + associativeArray["food"] + "<br><br>");
