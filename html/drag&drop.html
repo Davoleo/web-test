@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag & Drop</title>
+
+    <style type="text/css">
+        body {background-color: #71F9BF}
+        table {width: 100%}
+        td {border: #CE93EC 1px solid; height: 100px; width: 33%; position: relative}
+        td img {width: 150px; height: 150px}
+
+        .MiniImg {position: absolute; left: 110%; top: 35px; width: 80px; height: 80px; border-style: dashed; border-width: 2px}
+
+        .TableDescription {}
+        .TableSeparator {border: none;}
+        .TableImage {}
+    </style>
+
+    <script type="text/javascript">
+
+        let draggedImgPath;
+
+        function dragStart(event) {
+            event.dataTransfer.effectAllowed = 'move';
+            event.dataTransfer.dropEffect = 'move';
+
+            //Attach some data to the image that is being dragged (the source of the image)
+            //target: the element that is handled by this function
+            draggedImgPath = event.target.getAttribute('src');
+
+            //I CAN'T FUCKING USE THIS SINCE JAVASCRIPTS EDITS THE FUCKING PATH MAKING IT ABSOLUTE INSTEAD OF RELATIVE
+            //event.dataTransfer.setData("text/plain", event.target.getAttribute('src'))
+        }
+        
+        function dragOver(event) {
+            //Makes it so that the default prohibition cursor is prevented from overwriting the custom handler cursor
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+
+            //I CAN'T FUCKING USE THIS SINCE JAVASCRIPTS EDITS THE FUCKING PATH MAKING IT ABSOLUTE INSTEAD OF RELATIVE
+            //let draggedImgPath = event.dataTransfer.getData("text/plain");
+            let tdContainer = event.target;
+
+            //creates the copy of the image to output on the side of the description
+            let imgCopy = document.createElement("img");
+            imgCopy.setAttribute('src', draggedImgPath);
+            //adds the mini-image to the td (the image is transformed by other CSS rules later)
+            tdContainer.appendChild(imgCopy);
+
+            if (draggedImgPath.substring() === (tdContainer.getAttribute('data-correct_path')))
+            {
+                tdContainer.style.backgroundColor = 'green';
+                imgCopy.setAttribute('class', 'MiniImg');
+                imgCopy.style.borderColor = 'green';
+            }
+            else
+            {
+                tdContainer.style.backgroundColor = 'red';
+                imgCopy.setAttribute('class', 'MiniImg');
+                imgCopy.style.borderColor = 'red';
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <h3 align="center"> Drag the pics to the right description </h3>
+
+    <!-- the "draggable" attribute, when set to true, allows the component to be dragged with the mouse -->
+    <table>
+        <tr>
+            <td class="TableDescription" ondragover="dragOver(event)" data-correct_path="../resources/img/HDD.png" ondrop="drop(event)">Hard Disk Drive</td>
+            <td class="TableSeparator"></td>
+            <td class="TableImage"><img src="../resources/img/SSD.png" alt="SSDImage" draggable="true" ondragenter="dragStart(event)"></td>
+        </tr>
+        <tr>
+            <td class="TableDescription" ondragover="dragOver(event)" data-correct_path="../resources/img/SSD.png" ondrop="drop(event)">Solid State Drive</td>
+            <td class="TableSeparator"></td>
+            <td class="TableImage"><img src="../resources/img/SSD_M2.png" alt="SSD_M2Image" draggable="true" ondragenter="dragStart(event)"></td>
+        </tr>
+        <tr>
+            <td class="TableDescription" ondragover="dragOver(event)" data-correct_path="../resources/img/SSD_M2.png" ondrop="drop(event)">Solid State Drive M2</td>
+            <td class="TableSeparator"></td>
+            <td class="TableImage"><img src="../resources/img/HDD.png" alt="HDDImage" draggable="true" ondragenter="dragStart(event)"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
