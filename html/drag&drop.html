@@ -29,6 +29,12 @@
             //target: the element that is handled by this function
             draggedImgPath = event.target.getAttribute('src');
 
+            //TODO Fix custom drag icon
+            let dragIcon = document.createElement('img');
+            dragIcon.src = '../resources/img/question_mark.png';
+            dragIcon.width = 100;
+            event.dataTransfer.setDragImage(dragIcon, -10, -10)
+
             //I CAN'T FUCKING USE THIS SINCE JAVASCRIPTS EDITS THE FUCKING PATH MAKING IT ABSOLUTE INSTEAD OF RELATIVE
             //event.dataTransfer.setData("text/plain", event.target.getAttribute('src'))
         }
