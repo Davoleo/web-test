@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CANVAS</title>
+</head>
+
+<body>
+
+<canvas id="drawing" width="1000" height="1000"></canvas>
+
+<script type="text/javascript">
+    function drawRects() {
+
+        let canvas = document.getElementById('drawing').getContext("2d");
+
+        for (i = 0; i < 10; i++)
+        {
+            /**
+             * Math.random = random number between 0 and 1 (1 is never reached tho)
+             * Math.floor = truncates the decimal part of the number
+             * toString(16) = transforms the number into a string in the hexadecimal format
+             * @type {string}
+             */
+            let color = "#" +  Math.floor(Math.random() * 256).toString(16) +
+                               Math.floor(Math.random() * 256).toString(16) +
+                               Math.floor(Math.random() * 256).toString(16);
+
+            canvas.fillStyle = color;
+            canvas.fillRect(40*i, 40*i, 40, 40);
+        }
+    }
+
+    setInterval(drawRects, 100)
+
+</script>
+
+</body>
+</html>
