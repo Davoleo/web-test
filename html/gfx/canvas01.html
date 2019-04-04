@@ -21,13 +21,29 @@
              * Math.floor = truncates the decimal part of the number
              * toString(16) = transforms the number into a string in the hexadecimal format
              * @type {string}
+             * Model: #RRGGBB
              */
-            let color = "#" +  Math.floor(Math.random() * 256).toString(16) +
+            let color1 = "#" +  Math.floor(Math.random() * 256).toString(16) +
                                Math.floor(Math.random() * 256).toString(16) +
                                Math.floor(Math.random() * 256).toString(16);
 
-            canvas.fillStyle = color;
+            //Filled Rectangles
+            canvas.fillStyle = color1;
             canvas.fillRect(40*i, 40*i, 40, 40);
+        }
+
+        /**
+         * Model: rgb(R, G, B)
+         */
+        for (i = 0; i < 10; i++)
+        {
+            let color2 = "rgb(" +  Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + ")";
+
+            //Empty rectangles
+            canvas.strokeStyle = color2;
+            canvas.strokeRect(40*i + 80, 40*i, 40, 40);
         }
     }
 
