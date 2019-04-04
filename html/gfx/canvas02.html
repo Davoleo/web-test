@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CANVAS</title>
+</head>
+
+<body>
+
+<canvas id="drawing" width="1000" height="1000"></canvas>
+
+<script type="text/javascript">
+    function drawRects() {
+        let canvas = document.getElementById('drawing').getContext("2d");
+
+        for (let i = 0; i < 10; i++)
+        {
+            let gradient = canvas.createLinearGradient(100*i, 100*i, 100*i + 100, 100*i + 100);
+            gradient.addColorStop(0.33, "#8BDA41");
+            gradient.addColorStop(0.66, "#B57EA4");
+            gradient.addColorStop(1, "#8D37EB");
+
+            canvas.fillStyle=gradient;
+            canvas.fillRect(100*i, 100*i, 100, 100);
+        }
+
+        for (let i = 0; i < 10; i++)
+        {
+
+            let gradient = canvas.createLinearGradient(100*i + 100, 100*i, 100*i + 100, 100*i + 100);
+
+            for (let tick = 0; tick <= 255; tick++)
+                gradient.addColorStop(tick/255, "rgb(" + tick.toString() + ", 0, 0");
+
+            canvas.fillStyle=gradient;
+            canvas.fillRect(100*i + 200, 100*i, 100, 100);
+        }
+    }
+
+    drawRects();
+</script>
+
+</body>
+</html>
