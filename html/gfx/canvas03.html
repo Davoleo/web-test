@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CANVAS</title>
+</head>
+
+<body>
+
+<canvas id="drawing" width="1000" height="1000"></canvas>
+
+<script type="text/javascript">
+    function drawRects() {
+        let canvas = document.getElementById('drawing').getContext("2d");
+
+        for (let i = 0; i < 10; i++)
+        {
+            /**
+             * params: firstX coord, firstY coord, gradStart, secondX coord, secondY coord, gradEnd
+             * @type {CanvasGradient}
+             */
+            let gradient = canvas.createRadialGradient(100*i + 50, 100*i + 50, 0, 100*i + 50, 100*i + 50, 50);
+
+            for (f=0; f<=255; f++)
+            {
+                gradient.addColorStop(f/255, "rgb(0," + f.toString() + ", 0)" );
+            }
+
+            canvas.fillStyle = gradient;
+            canvas.fillRect(100*i, 100*i, 100, 100)
+        }
+
+        for (let i = 0; i < 10; i++)
+        {
+            /**
+             * params: firstX coord, firstY coord, gradStart, secondX coord, secondY coord, gradEnd
+             * @type {CanvasGradient}
+             */
+            let gradient = canvas.createRadialGradient(100*i + 50, 100*i + 50, 0, 100*i + 50, 100*i + 50, 50);
+
+            for (f=0; f<=255; f++)
+            {
+                gradient.addColorStop(f/255, "rgb(" + Math.floor(Math.random() * 256).toString() + "," + Math.floor(Math.random() * 256).toString() + "," + f.toString() + ")" );
+            }
+
+            canvas.fillStyle = gradient;
+            canvas.fillRect(100*i, 100*i, 100, 100)
+        }
+
+    }
+
+    setInterval(drawRects, 100)
+</script>
+
+</body>
+</html>

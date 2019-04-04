@@ -26,14 +26,28 @@
 
         for (let i = 0; i < 10; i++)
         {
+            let gradient = canvas.createLinearGradient(100*i, 100*i + 200, 100*i + 100, 100*i + 100);
 
-            let gradient = canvas.createLinearGradient(100*i + 100, 100*i, 100*i + 100, 100*i + 100);
-
-            for (let tick = 0; tick <= 255; tick++)
-                gradient.addColorStop(tick/255, "rgb(" + tick.toString() + ", 0, 0");
+            for (f=0; f<=255; f++)
+                gradient.addColorStop(f/255, "rgb(0," + f.toString() + ", 0)" );
 
             canvas.fillStyle=gradient;
             canvas.fillRect(100*i + 200, 100*i, 100, 100);
+        }
+
+        for (let i = 0; i < 10; i++)
+        {
+            /**
+             *  Linear gradient on the border
+             * @type {CanvasGradient}
+             */
+            let gradient = canvas.createLinearGradient(100*i , 100*i, 100*i + 100, 100*i + 100);
+
+            for (f=0; f<=255; f++)
+                gradient.addColorStop(f/255, "rgb(" + f.toString() + ", 0, 0)" );
+
+            canvas.strokeStyle=gradient;
+            canvas.strokeRect(100*i, 100*i, 100, 100);
         }
     }
 
