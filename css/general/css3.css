@@ -1,0 +1,51 @@
+/*Per tutti i blocchi ul presenti dopo un blocco p*/
+p~ul {background: crimson;}
+
+/*Per tutti gli elementi che possiedono l'attributo id | Si può anche restringere il campo ad un certo elemento*/
+[id] {background: magenta;}
+
+/* '*=' : contiene | '=' è uguale a */
+a[href*=".net"] {background: lightgrey}
+
+/* '^=' : inizia con | '$=' finisce con */
+a[href^="https"] {background: palegreen}
+
+/*primo di quel tipo a seconda del suo genitore*/
+li:first-of-type {background: slategrey}
+
+/*l'ennesimo di quel tipo a seconda del suo genitore*/
+li:nth-of-type(2) {background: mediumseagreen}
+
+/*ultimo di quel tipo a seconda del suo genitore*/
+li:last-of-type {background:antiquewhite}
+
+/* Cover: l'importante è che copra tutto lo spazio disponibile, se poi viene tagliata fa lo stesso */
+/* Contain: l'importante è che l'immagine si veda tutta, se poi ci sono dell bande bianche fa lo stesso */
+body {
+    background: url(https://i.imgur.com/EdAGGFS.jpg) center center fixed no-repeat;
+    background-size: cover;
+    color: aqua;
+}
+
+#theDiv {
+    border: 10px dashed blue;
+    padding: 50px;
+    position: fixed;
+    left: 430px;
+    top: 280px;
+    width: 1280px;
+    height: 720px;
+    color: black;
+    font-weight: bold;
+    font-size: 80px;
+    background-color:burlywood;
+    background-clip: border-box
+}
+
+/* parameters {traslazione orizzontale | traslazione verticale | } */
+.EffettiTesto {text-shadow: 2px 2px 8px #00ff00}
+
+@font-face {
+    font-family: font-tremante;
+    src: url('../../font/ITCBLKAD.ttf')
+}

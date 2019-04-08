@@ -1,0 +1,41 @@
+@keyframes colorCycle
+{
+    from {background: yellowgreen}
+    to {background: tomato}
+}
+
+@keyframes slide
+{
+    from {
+        left: 0;
+        top: 0;
+    }
+    to {
+        left: 500px;
+        top: 500px;
+    }
+}
+
+@keyframes enhancedColorCycle
+{
+    0% {background: red}
+    20% {background: lightcoral}
+    60% {background: lightblue}
+    80% {background: lightgreen}
+    100% {background: black}
+}
+
+
+div {
+    width: 200px;
+    height: 100px;
+    background-color: yellowgreen;
+    font-size: 100px;
+    float: left;
+}
+
+#divSx {animation: colorCycle 3s infinite alternate}
+#divDx {animation: slide 1.5s infinite alternate}
+#div1  {animation: slide 1.5s infinite linear}
+#div2  {animation: slide 1.5s infinite cubic-bezier(1, 0, 0, 1) }
+#div3  {animation: enhancedColorCycle 5s infinite}
