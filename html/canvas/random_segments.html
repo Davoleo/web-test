@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segment Randomizer</title>
+</head>
+<body>
+    <canvas id="drawing" height="1000" width="1000"></canvas>
+
+    <div style="position: absolute; left: 550px; top: 0;">
+        <button onclick="start()">START</button>
+        <button onclick="pause()">PAUSE</button><br>
+        <label>Colored<input type="checkbox" onchange="colored=this.checked;"></label><br>
+        <label><select id="mode">
+            <option>Radial</option>
+            <option>Consecutive</option>
+        </select></label>
+    </div>
+
+    <script type="text/javascript">
+
+        let canvas = document.getElementById("drawing").getContext("2d");
+        let colored = false;
+        let timer = null;
+        
+        function start() {
+            let mode = document.getElementById("mode").value;
+            x = 500, y = 500;
+            if (mode === "Radial")
+                timer = setInterval(drawRadial, 100);
+            else
+                timer = setInterval(drawConsecutive, 100);
+        }
+
+        function pause() {
+            if (timer != null)
+                clearInterval(timer);
+        }
+        
+        function drawRadial() {
+            //Path
+            canvas.beginPath();
+            canvas.moveTo(x, y); //Center of the canvas
+
+            canvas.lineTo(Math.random() * 1000, Math.random() * 1000);
+
+            if (colored)
+            {
+                canvas.strokeStyle = "rgb(" +
+                    Math.floor(Math.random() * 256).toString() + "," +
+                    Math.floor(Math.random() * 256).toString() + "," +
+                    Math.floor(Math.random() * 256).toString() + ")";
+            }
+
+            canvas.stroke();
+            canvas.closePath();
+        }
+
+        function drawConsecutive() {
+            //Path
+            canvas.beginPath();
+            canvas.moveTo(x, y); //Center of the canvas
+
+            x = Math.random() * 1000; y = Math.random() * 1000;
+            canvas.lineTo(x, y);
+
+            if (colored)
+            {
+                canvas.strokeStyle = "rgb(" +
+                    Math.floor(Math.random() * 256).toString() + "," +
+                    Math.floor(Math.random() * 256).toString() + "," +
+                    Math.floor(Math.random() * 256).toString() + ")";
+            }
+
+            canvas.stroke();
+            canvas.closePath();
+        }
+
+    </script>
+</body>
+</html>
