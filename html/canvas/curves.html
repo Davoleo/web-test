@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Curves</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="1500" height="750"></canvas>
+
+    <div style="position: absolute; left: 550px; top: 0;">
+        <button onclick="start()">START</button>
+        <button onclick="pause()">PAUSE</button><br>
+        <label>Colored<input type="checkbox" onchange="colored=this.checked;"></label><br>
+        <label><select id="mode">
+            <option>Arcs</option>
+            <option>Quadratic Curves</option>
+            <option>Bezier Curves</option>
+        </select></label>
+    </div>
+
+<script type="text/javascript">
+
+    let canvas = document.getElementById("canvas").getContext("2d");
+    let colored = false;
+    let timer = null;
+
+    function start() {
+        let mode = document.getElementById("mode").value;
+        x = 500, y = 500;
+
+        switch (mode) {
+            case "Arcs":
+                timer = setInterval(drawArcs, 100);
+                break;
+            case "Quadratic Curves":
+                timer = setInterval(drawQuadraticCurves, 100);
+                break;
+            case "Bezier Curves":
+                timer = setInterval(drawBezierCurves);
+                break;
+        }
+    }
+
+    function pause() {
+        if (timer != null)
+            clearInterval(timer);
+    }
+
+    function drawArcs() {
+        //Path
+        canvas.beginPath();
+
+        /**
+         * parameters:
+         * 1: X Position of the center of the circumference
+         * 2: Y Position of the center of the circumference
+         * 3: Radius of the circumference
+         * 4: Start Angle (referring to the standard circumference - radiants)
+         * 5: End Angle (referring to the standard circumference - radiants)
+         * 6: Reverse (Optional)
+         */
+        canvas.arc(Math.random()*750, Math.random()*750, Math.random()*50, Math.PI*6/8, Math.PI*8/6);
+
+        if (colored)
+        {
+            canvas.strokeStyle = "rgb(" +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + ")";
+        }
+
+        canvas.stroke();
+        canvas.closePath();
+    }
+
+    let xQuadraticControl = 150, yQuadraticControl = 50;
+    function drawQuadraticCurves() {
+        //Path
+        canvas.beginPath();
+
+        //Starting point for the quadratic curve
+        canvas.moveTo(50, 80);
+
+        /**
+         * 1: X Coord of the quadratic control point
+         * 2: Y Coord of the quadratic control point
+         * 3: X Coord of the end point of the quadratic line
+         * 4: Y Coord of the end point of the quadratic line
+         */
+        canvas.quadraticCurveTo(xQuadraticControl, yQuadraticControl, 50, 300);
+        xQuadraticControl+=3;
+
+        if (colored)
+        {
+            canvas.strokeStyle = "rgb(" +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + ")";
+        }
+
+        canvas.stroke();
+        canvas.closePath();
+    }
+
+    let xBezierControl1 = 75, yBezierControl1 = 120;
+    let xBezierControl2 = 225, yBezierControl2 = 200;
+    function drawBezierCurves() {
+        canvas.beginPath();
+
+        //Starting point for the quadratic curve
+        canvas.moveTo(150, 100);
+
+        /**
+         * 1: X Coord of the first Bezier control point
+         * 2: Y Coord of the first Bezier control point
+         * 3: X Coord of the second Bezier control point
+         * 4: Y Coord of the second Bezier control point
+         * 5: X Coord of the end point of the quadratic line
+         * 6: Y Coord of the end point of the quadratic line
+         */
+        canvas.bezierCurveTo(xBezierControl1, yBezierControl1, xBezierControl2, yBezierControl2, 250, 300);
+        xBezierControl1+=2;
+        xBezierControl2-=2;
+
+        if (colored)
+        {
+            canvas.strokeStyle = "rgb(" +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + "," +
+                Math.floor(Math.random() * 256).toString() + ")";
+        }
+
+        canvas.stroke();
+        canvas.closePath();
+    }
+
+</script>
+
+</body>
+</html>
