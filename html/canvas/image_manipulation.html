@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Manipulation</title>
+</head>
+<body>
+    <img id="original" src="../../resources/img/meme_pooh.jpg" width="500" height="500" alt="CANI">
+    <canvas id="editedPhoto" width="500" height="500"></canvas>
+
+    <button onclick="start()">START</button>
+
+<script type="text/javascript">
+    function start() {
+        canvas = document.getElementById("editedPhoto").getContext("2d");
+
+        canvas.drawImage(document.getElementById('original'),0, 0);
+        let imageData = canvas.getImageData(0, 0, 500, 500);
+
+        for (let x = 0; x < 500; x++)
+        {
+            let startFrom = x * 500 * 4; // *4 per ogni pixel
+
+            for (let y = 0; y < 500; y++)
+            {
+                imageData.data[startFrom++] /= 3; //Decreases the red component
+                imageData.data[startFrom++] /= 3; //Decreases the green component
+                imageData.data[startFrom++] *= Math.min(255, imageData.data[startFrom]*5); //Increases the blue component
+                startFrom++;
+            }
+        }
+
+        canvas.putImageData(imageData, 0, 0)
+
+        // for (i = 0; i < 100; i++)
+        // canvas.drawImage(document.getElementById('original'), Math.floor(Math.random()*300),Math.floor(Math.random()*300), Math.floor(Math.random()*300), Math.floor(Math.random()*300));
+
+
+
+
+
+
+    }
+</script>
+</body>
+</html>
