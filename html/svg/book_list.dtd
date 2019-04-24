@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE bookList
+        [
+            <!ELEMENT address (street, city)>
+                <!ELEMENT street (#PCDATA)>
+                <!ELEMENT city (#PCDATA)>
+                <!ELEMENT bookList (book+)> <!-- bookList contains one or more books [book+] -->
+                <!ELEMENT book (title, author, publisher, address)>
+                <!ELEMENT title (#PCDATA)>
+                <!ELEMENT author (#PCDATA)>
+                <!ELEMENT publisher (#PCDATA)>
+        ]>
+
+<!-- Example XML Rules for a book object ^^^ -->
+
+<!-- DTD: Document Type Definition -->
+<!-- PCDATA: Parsed Character Data -->
