@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Chapter 1</title>
+    <script type="text/javascript" src="../../js/lib/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <!--    In-Line XML SVG-->
+    <svg width="800" height="800">
+        <circle onclick="zoom();" cx="400" cy="400" fill="yellow" r="40" stroke="red" stroke-width="3"></circle>
+    </svg>
+
+<!--    External SVG link -->
+    <object type="image/svg+xml" data="triangle.svg">
+        <p> Your Fucking browser is shit and doesn't support SVG</p>
+    </object>
+
+<!--    Other kinds of external SVG link:
+        <img>
+        <iframe>
+        <embed>
+-->
+
+
+<script type="text/javascript">
+    function zoom() {
+        //a list of all the circle tag elements in the HTML page
+        let circle = $('circle');
+
+        //Multiplies the radius by 2
+        let oldScale = circle.attr('r');
+        circle.attr('r', (oldScale*2).toString())
+    }
+</script>
+</body>
+</html>
