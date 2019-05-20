@@ -35,6 +35,36 @@ let elemFromTag = document.getElementsByTagName("P");
 function changeElements() {
     //This will show all the content of the body
     alert(elemFromClass[0].innerHTML);
+    
+    //Change elements' inner HTML
     elemFromTag[0].innerHTML = "AYYY";
     elemFromId.innerHTML = "Hola!"
+}
+
+function createElements() {
+    let div = document.getElementById("container");
+
+    //Attach some node to another
+    let paragraph = document.createElement("p");
+    let node = document.createTextNode("Example text node generated automatically using javascript");
+    paragraph.appendChild(node);
+    div.appendChild(paragraph);
+
+    //insertBefore(): Inserts the first argument's node before the second argument's node
+    let buttonCreate = document.getElementById("buttonCreate");
+    document.insertBefore(paragraph, buttonCreate)
+
+}
+
+function removeElements() {
+    let child = document.getElementById("testHeader");
+    //Removes testHeader (The child element of the first paragraph)
+    child.parentNode.removeChild(child);
+}
+
+function replaceElements() {
+    let testText = document.createTextNode("REPLACED TEXT");
+    let child = document.getElementById("testHeader");
+
+    child.parentNode.replaceChild(testText, child);
 }
