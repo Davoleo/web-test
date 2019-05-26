@@ -83,3 +83,6 @@ var associativeArray = [];
 associativeArray["color"] = "green";
 associativeArray["food"] = "pizza";
 document.write( "Food = " + associativeArray["food"] + "<br><br>");
+
+//When the whole page is loaded
+window.onload = alert("JESUS likes you");

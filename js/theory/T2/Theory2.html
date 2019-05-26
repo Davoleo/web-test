@@ -6,9 +6,11 @@
 </head>
 <body onload="onLoad();">
 
+<span id="sampleLine">Sample Text Line</span>
 <!-- Event handlers lets you run javascript code when the user triggers a specific event (Example: onclick) -->
 <form>
     <input type="button" value="CLICK ME" onclick="alert('aah!'); alert('eventhandler');" onmouseout="onHover();">
+    <input type="checkbox" onchange="changeCase()" value="Switch case">
 </form>
 <br>
 <a href="https://davoleo.github.io/Website/" onmouseover="onHover();">Hover over me!</a>

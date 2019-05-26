@@ -67,5 +67,15 @@ function yearsLeft() {
     return 65 - this.age;
 }
 
+function changeCase() {
+    // TODO Fix this fucking function
+    let line = document.getElementById("sampleLine");
+
+    if (line.innerHTML.charAt(0) < 97)
+        line.innerHTML.toLowerCase();
+    else
+        line.innerHTML.toUpperCase();
+}
+
 //<body>
 document.write("<br>" + davoleo.yearsLeft());
