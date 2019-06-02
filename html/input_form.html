@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 
 <body>
 
 <form style="background-color: orange; width: 45%; border: solid 2px red; padding: 5px"
- 		id="inserimentoDati" name="inserimento" action="elaboraDati.php" method="get">
+ 		id="inserimentoDati" name="inserimento" action="elaboraDati.php" method="get" onsubmit="validate()">
 <table style="border: inherit">
 	<tr>
 		<td>Nickname </td>
@@ -95,7 +95,8 @@
          <td>Browser Preferito</td>
          <td> <input list="elencoBrowser" name="browser" id="browser" style="background-color: yellow"/> </td>
       </tr>
-<datalist>
+
+<datalist id="elencoBrowser">
    <option value="Internet Explorer">
    <option value="Microsoft Edge">
    <option value="Google Chrome">
@@ -114,5 +115,11 @@
 
 </form>
 
+<script type="text/javascript">
+	function validate() {
+		let nickname = document.getElementById("congnome");
+		return nickname.value !== "";
+	}
+</script>
 </body>
 </html>
