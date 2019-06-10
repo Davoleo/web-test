@@ -18,10 +18,21 @@ let ExampleComponent = class extends React.Component{
     }
 };
 
+let Anime = class extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>{this.props.title}</h1>
+                <h2>{this.props.genre}</h2>
+            </div>
+        )
+    }
+};
+
 //whenever you want to render multiple components you have to stick them together in a div tag
 ReactDOM.render(
     <div>
-        <ExampleComponent/>
-        <ExampleComponent/>
-        element
+        <Anime title="Hyouka" genre="Mistery" />
+        <Anime title="Love, Chunibyo & Other Delusions" genre="Comedy" />
+        <Anime title="That Time I Got Reincarnated as a Slime" genre="Adventure" />
     </div>, rootEl);
