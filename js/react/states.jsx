@@ -1,5 +1,3 @@
-
-//FIXME broken dynamic message change
 let CheckBox = class extends React.Component {
 
     constructor(props) {
