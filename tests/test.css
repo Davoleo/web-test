@@ -2,7 +2,7 @@
 /* selettore di elemento */
 body{
    background-color: rgba(39,152,227,0.47);
-   background-image: url(img/micio.jpg);
+   /*background-image: url(img/micio.jpg);*/
    background-repeat: repeat-x;
    background-position: center;
    }
@@ -19,7 +19,7 @@ body{
 
    .Spaziato { line-height: 2em; color: #6699CC; font-family: Arial, Helvetica, sans-serif;}
 
-   .ImageUL {list-style-image: url(img/uwu.gif);}
+   .ImageUL {list-style-image: url(../resources/img/info.png);}
 
    .GreekUL {list-style-type: lower-greek;}
 

@@ -15,6 +15,7 @@ var Comment = class extends React.Component {
     save() {
         this.setState({editing: false});
     }
+
     remove(){
         alert("Comment Removed");
     }

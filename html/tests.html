@@ -5,11 +5,12 @@
 
 <!--  Questo è un commento -->
 
-<html>
+<html lang="en">
 <head>
 	<title>TEST</title>
 
 <!-- Foglio di stile incorporato -->
+<!-- 	^^^ this is an HTML Comment -->
 <style type="text/css">
 body {background-color: #99FF99;}
 </style>
@@ -20,13 +21,27 @@ body {background-color: #99FF99;}
 
 <body contenteditable="false" style="margin: 0px;">
 
+<h1>BIG TITLE</h1>
+
+<p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. Nullam varius, odio nec ornare tristique, <em>magna odio efficitur tortor</em>, non tempor ipsum nisl sed mauris.
+	Vivamus consectetur, elit pretium euismod vulputate, risus arcu vestibulum lacus, eget bibendum elit ante viverra lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent varius in mauris in convallis.
+	Curabitur at molestie sapien, eu consectetur risus. Morbi ac nulla metus. Donec varius interdum nisi eu porta. Nullam a risus non dolor mattis ullamcorper.
+	Maecenas vitae consequat neque, nec fringilla nunc. Suspendisse tincidunt odio quam, non tempor risus lobortis eget.</p>
+
+<p>Ut lectus urna, maximus vitae nulla a, tincidunt tincidunt felis. Cras bibendum leo leo, id fringilla dolor pellentesque iaculis.
+	Sed neque mi, viverra ut augue in, consequat sollicitudin sem. Nulla egestas euismod erat, at iaculis ligula volutpat nec. Nullam aliquam egestas imperdiet.
+	Suspendisse condimentum lobortis lectus, et fermentum arcu consequat quis. Mauris rutrum erat ut urna congue, sit amet blandit turpis mollis.
+	Nam mollis neque non mauris mollis, eget vehicula nunc convallis.
+	Aliquam vehicula erat nibh, a porta risus blandit ac. In non ex et nunc volutpat tempor eget id ante.</p>
+
   <a href="#paragrafo_ciao">jump to the last paragraph</a>
   <br>
   <a href="mailto:yutuber957@gmail.com" target="_blank"> Click here to send an email to 'ItHurtsLikeHell' </a>
   <br>
   <a href="input_form.html" target="_blank"> Testing Input Form </a>
 
-<p id="paragrafo" contextmenu="share" style="margin-top: 0px;
+<!-- TODO Fix contextmenu-->
+<p id="paragrafo" contextmenu="share" style="margin-top: 0;
 		font-size: 27px;
 		color: red;
 		text-align: center;">
@@ -42,13 +57,13 @@ body {background-color: #99FF99;}
 <button class="Paragrafo" type="button" onclick="getElementById('paragrafo').setAttribute('hidden','');"> NASCONDI </button>
 <br/>
 
-<img width="200" height="100" src="../resources/img/coding.jpg">
+<img width="200" height="100" src="../resources/img/coding.jpg" alt="AJAJAJAJAA">
 <br/>
 
 <img usemap="#googleLogoMap" alt="sono il logo di google!" title="eccomi qua!" src="http://www.google.it/images/srpr/logo3w.png">
 
 <map name="googleLogoMap">
-	<area shape="rect" coords="0,0,75,75" href="http://www.google.it" target="_blank" />
+	<area shape="rect" coords="0,0,75,75" href="http://www.google.it" target="_blank"  alt="AJAJAJAAJAJAJA"/>
 </map>
 
 <!-- Ordered e Unordered list -->
@@ -122,34 +137,64 @@ body {background-color: #99FF99;}
 </audio>
 
 <p class="Spaziato">
-	<b> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </b> <br/>
-	<b> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </b> <br/>
-	<b> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </b> <br/>
-	<b> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </b> <br/>
-	<b> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </b> <br/>
-	<b> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </b> <br/>
+	<strong> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </strong> <br/>
+	<strong> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </strong> <br/>
+	<strong> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </strong> <br/>
+	<strong> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </strong> <br/>
+	<strong> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </strong> <br/>
+	<strong> Il contenuto della pagina - Il contenuto della pagina - Il contenuto della pagina </strong> <br/>
 </p>
 
+<h4>Color List</h4>
 <ul class="ImageUL">
-	<b> <li> Altro contenuto della pagina </li> </b>
-	<b> <li> Altro contenuto della pagina </li> </b>
-	<b> <li> Altro contenuto della pagina </li> </b>
-	<b> <li> Altro contenuto della pagina </li> </b>
-	<b> <li> Altro contenuto della pagina </li> </b>
+	<li><strong> Red </strong></li>
+	<li><strong> Green </strong></li>
+	<li><strong> Blue </strong></li>
+	<li> Yellow
+		<ul>
+			<li>Sunflower</li>
+			<li>Gold</li>
+			<li>Banana
+				<ul>
+					<li>Frozen Yellow</li>
+					<li>Non-Frozen Yellow</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><strong> Purple </strong></li>
 </ul>
 
 <ul class="GreekUL">
-	<b> <li>Contenuto aggiuntivo della pagina </li> </b>
-	<b> <li>Contenuto aggiuntivo della pagina </li> </b>
-	<b> <li id="javascript">Contenuto aggiuntivo della pagina </li> </b>
-	<b> <li id="css">Contenuto aggiuntivo della pagina </li> </b>
-	<b> <li id="html">Contenuto aggiuntivo della pagina </li> </b>
+	<li><strong>Contenuto aggiuntivo della pagina</strong></li>
+	<li><strong>Contenuto aggiuntivo della pagina</strong></li>
+	<li id="javascript"><strong>Contenuto aggiuntivo della pagina</strong></li>
+	<li id="css"><strong>Contenuto aggiuntivo della pagina</strong></li>
+	<li id="html"><strong>Contenuto aggiuntivo della pagina</strong></li>
 </ul>
 
+<!-- Spans and divs are simple invisible generic containers that are used to group elements together (Span is in-line element | Div is a block-level element) -->
+<!-- img and a tag are in-line elements -->
+<div>
+<h2>Lorem Ipsum</h2>
+<p>Lorem  <span>ipsum dolor sit amet</span>, consectetur adipisicing elit.
+	A ab alias architecto, atque beatae commodi distinctio dolores eaque eos, facilis ipsum maiores minus possimus temporibus, voluptas.
+	Cupiditate dicta esse nam?</p>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	A ab alias architecto, atque beatae commodi distinctio dolores eaque eos, facilis ipsum maiores minus possimus temporibus, voluptas.
+	Cupiditate dicta esse nam?</p>
+
+<h3>Quizzes</h3>
+<ul>
+	<li><a href="practice/quiz1.html">First</a></li>
+	<li><a href="practice/quiz2.html">Second</a></li>
+</ul>
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-<a name="paragrafo_ciao" />
+<a name="paragrafo_ciao"/>
 <p> Ciao </p>
 
 
