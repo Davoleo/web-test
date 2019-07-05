@@ -254,3 +254,58 @@ for (let v of set.values()) {
     console.log(v);
 }
 
+
+/**
+ * ES6 Promises
+ * Asynchronous work (?)
+ */
+
+new Promise(function (resolve, reject) {
+
+    // if (success)
+    //     resolve(result);
+    // else
+    //     reject(Error("failure"));
+});
+
+/**
+ * Iterators & Generators (?)
+ */
+let iterableObj = {
+    [Symbol.iterator] : function* () {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+};
+console.log(iterableObj);
+
+/**
+ * ES6 Modules (Namespaces...?)
+ */
+//import * as math from "lib/math"
+//console.log(`2p = + ${math.sum(math.pi, math.pi)}`);
+
+/***
+ * ES6 built-in methods
+ */
+
+//filter() :
+[4, 5, 1, 8, 2, 0].filter(function (x) {
+    return x > 3;
+});
+
+//find() :
+[4, 5, 1, 8, 2, 0].find(x => x > 3);
+
+[4, 5, 1, 8, 2, 0].findIndex(x => x > 3);
+
+//repeat() : Repeats a string a certain amount of times
+console.log("oof".repeat(3));
+
+
+console.log("Davoleo".startsWith("Davo", 0)); //true
+console.log("Davoleo".endsWith("Davo", 4)); //true
+console.log("Davoleo".includes("vole")); //true
+console.log("Davoleo".includes("avo", 1)); //true
+console.log("Davoleo".includes("avo", 2)); //false
