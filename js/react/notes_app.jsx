@@ -5,15 +5,20 @@ var Comment = class extends React.Component {
         this.state = {editing: false};
 
         this.edit = this.edit.bind(this);
-        this.save = this.edit.bind(this);
+        this.save = this.save.bind(this);
     }
 
     edit() {
         this.setState({editing: true});
     }
     //FIXME It doesn't set the editing mode to false (fucking bitch)
-    save() {
-        this.setState({editing: false});
+    save(e) {
+        e.preventDefault();
+        let val = this.refs.newText.value;
+        console.log("New Comment: " + val);
+        this.setState(state => ({
+            editing: false
+        }));
     }
 
     remove(){
@@ -29,10 +34,11 @@ var Comment = class extends React.Component {
         )
     }
 
+    /*we use ref instead of id because it can be assigned to multiple components, while ids need to be unique*/
     renderForm() {
         return (
             <div className="commentContainer">
-                <textarea defaultValue={this.props.children} name="" id="" cols="30" rows="10"/>
+                <textarea ref="newText" defaultValue={this.props.children} cols="30" rows="10"/>
                 <button onClick={this.save} className="button-success">Save</button>
             </div>
         )
