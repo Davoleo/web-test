@@ -4,13 +4,13 @@
 
 //DIFFERENT KINDS OF VARIABLES
 
-//let creates a variable with a scope restricted to the nearest code block
+//let createpes a variable with a sco restricted to the nearest code block
 let strictVar = 10;
 
 //const creates a final variable (AKA Constant) that cannot change in time
 const constant = "banana";
 
-//let creates a global variable also accessible out of the code block which it's declared in
+//let creates a GLOBAL variable also accessible out of the code block which it's declared in
 var glovalVar = true;
 
 //It's undefined but doesn't output an error
@@ -48,7 +48,7 @@ for (let char of list)
 document.write("<br><br>");
 
 //---------------------------------------------------------------------------------------------
-//NEW FUNCTIONS SYNTAX
+//NEW FUNCTIONS SYNTAX (Arrow Functions)
 
 //old version
 function addOld(x, y) {
@@ -67,6 +67,13 @@ const addNew = (x, y) => {
 const greet = x => "Welcome " + x;
 
 list.forEach(el => console.log(el));
+
+
+ circleAreaArrow = (r) => {
+    return Math.PI * r * r;
+};
+
+console.log("Circle area is " + circleAreaArrow(7));
 
 //---------------------------------------------------------------------------------------------
 //DEAFAULT PARAMETERS
