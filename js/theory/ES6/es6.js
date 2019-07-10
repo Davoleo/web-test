@@ -148,6 +148,16 @@ function addAll(...nums) {
     return sum;
 }
 
+//Spread Operataor
+function addThreeNums(a, b, c) {
+    console.log(a + b + c);
+    return a + b + c;
+}
+
+let nums = [3, 4, 5];
+addThreeNums(...nums);
+// Spreads the array into 3 vars
+
 //-----------------------------------------
 /**
  * A class allows you to create multiple objects with the same structure
