@@ -11,7 +11,7 @@ var Comment = class extends React.Component {
     edit() {
         this.setState({editing: true});
     }
-    //FIXME It doesn't set the editing mode to false (fucking bitch)
+
     save(e) {
         e.preventDefault();
         let val = this.refs.newText.value;
