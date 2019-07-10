@@ -52,9 +52,33 @@ var Comment = class extends React.Component {
     }
 };
 
-ReactDOM.render(
-    <div className="board">
-        <Comment>Example Comment describing how my life is shit and all</Comment>
-        <Comment>Hey you, stop looking at this comment pls k thx!</Comment>
-    </div>,
-    document.getElementById("container"));
+var Board = class extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            comments: [
+                "Example Comment describing how my life is shit and all",
+                "Everyone likes pizza",
+                "Hey you, stop looking at this comment pls k thx!",
+                "React is really complicated",
+                "Ok, Enough comments now"
+            ]
+        }
+    }
+
+    render() {
+        return (
+            <div className="board">
+                {
+                    this.state.comments.map(function (text, index) {
+                        return (<Comment key={index}>{text}</Comment>)
+                    })
+                }
+            </div>
+        );
+    }
+
+};
+
+ReactDOM.render(<Board/> ,document.getElementById("container"));
