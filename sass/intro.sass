@@ -1,0 +1,23 @@
+
+// Variables
+$almond: #EFDECD;
+h1{
+    color: $almond;
+}
+
+
+
+//COMPASS CROSS-BROWSER
+#div5:hover {
+    @include transform(translateY(50%) scale(0.5));
+}
+
+//SASS NESTING
+#horizontalNav {
+    a {
+        color: white
+        &:hover {
+            color:$almond;
+        }
+    }
+}
