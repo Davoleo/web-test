@@ -9,6 +9,7 @@
     <!-- This ^^^ tells Internet Explorer tu use the latest rendering engine -->
 
     <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap_main.css" type="text/css">
 
     <title>Bootstrap</title>
 </head>
@@ -20,6 +21,35 @@
         <!-- Adds space around the text and makes the text big, provides a new line -->
         <div class="page-header">
             <h1>Bootstrap Test!</h1>
+        </div>
+
+    </div>
+
+<!-- enlarge the text and put it in a grey rounded corner box by default (box styling can be changed) -->
+    <div class="jumbotron">
+        
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Necessitatibus laboriosam, ipsam tenetur laborum cum doloremque impedit maxime excepturi autem fugit hic provident nesciunt debitis possimus, 
+            perspiciatis minima aliquid amet ex?
+        </p>
+        
+        <!-- Button styling type -->
+        <a href="#" class = "btn btn-default btn-lg" role="button">More info</a>
+        <button type="submit" class = "btn btn-danger" role = "button">Button</button>
+        <input type="button" value="Info" class = "btn btn-info">
+        <button type="submit" class = "btn-primary btn-sm">Primary</button>
+        <button type="submit" class = "btn btn-success btn-xs">Success</button>
+        <button type="submit" class = "btn btn-warning btn-lg">Warning</button>
+        <button type="submit" class = "btn btn-link btn-lg">Link</button>
+
+        <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Disabled Button</button>
+        <a href="#" class="btn btn-default btn-lg disabled" role="button">Disabled Button 2</a>
+
+        <div class="btn-group btn-group-lg" role="group">
+            <button type="button" class="btn btn-default">Small</button>
+            <button type="button" class="btn btn-default">Medium</button>
+            <button type="button" class="btn btn-default">Large</button>
         </div>
 
     </div>
