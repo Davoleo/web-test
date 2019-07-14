@@ -47,3 +47,23 @@ SELECT colorName FROM colors WHERE colorId > 15 OR colorId <= 17;   -- selects e
 
 -- selects colorHex from the colors table where colorId is greater than 2 and also less or equals to 11 or when colorName is equals to "brown"
 SELECT colorHex FROM colors WHERE (colorId > 2 AND colorId <= 11) OR colorName="brown";
+
+
+---------------------- ORDER BY -------------------------------------------------------
+
+-- Selects all the columns from the colors table and shows them in alphabetical order by colorName
+SELECT * FROM colors ORDER BY colorName;
+
+-- Selects all the columns from the colors table and shows them in alphabetical order by colorId
+SELECT * FROM colors ORDER BY colorId;
+
+-- Selects all the columns from the colors table and shows them in descending alphabetical order by colorId
+SELECT * FROM colors WHERE colorId>8 ORDER BY colorId DESC;
+
+----------------------  LIMIT ----------------------------------------------------------------
+
+-- Select all the columns of 5 rows from the colors table
+SELECT * FROM colors LIMIT 5;
+
+-- Selects all the columns of 3 rows from the colors table where colorId is greater than 8
+SELECT * FROM STUDENT WHERE colorId > 8 LIMIT 3;
