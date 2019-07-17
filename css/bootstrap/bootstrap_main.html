@@ -23,7 +23,122 @@
             <h1>Bootstrap Test!</h1>
         </div>
 
+        <!---------------- THE TWELVE COLUMNS SYSTEM ------------------->
+        <!-- Twelve Column system (Section off content in two versions of twelve) -->
+        <!-- Extra Large Res: equals or above 1200 | Large Res: from 992 to 1200 | Medium Res: from 768 to 992 | Small Res: from 544 to 768 | Extra Small Res: less than 544 -->
+        <div class="row">
+            <!-- Used to fix the blank space glitch in responsive websites -->
+            <!-- <div class="clearfix visible-res"></div> -->
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>Column 1</h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro nihil molestias repellendus maiores cupiditate aut nisi necessitatibus, 
+                laborum, ipsa, deleniti ratione quod. Esse maxime necessitatibus dignissimos eaque commodi non. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Assumenda aperiam consectetur fuga deleniti soluta quam dicta architecto ut eum culpa expedita autem, doloremque sint consequatur placeat dolorum ab. Molestiae, quas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Tenetur recusandae similique magnam atque, ex dolores veritatis qui porro aliquam voluptatum, ea nesciunt nobis. Magni, quod dolorum nesciunt odio ipsum error. 
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste assumenda error voluptatum itaque expedita pariatur maxime cumque! Ab, earum explicabo, temporibus 
+                qui ullam sequi quasi adipisci minus, atque maiores doloremque?
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <h4>Column 2</h4>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro nihil molestias repellendus maiores cupiditate aut nisi necessitatibus, 
+                    laborum, ipsa, deleniti ratione quod. Esse maxime necessitatibus dignissimos eaque commodi non. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Assumenda aperiam consectetur fuga deleniti soluta quam dicta architecto ut eum culpa expedita autem, doloremque sint consequatur placeat dolorum ab. Molestiae, quas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <h4>Column 3</h4>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro nihil molestias repellendus maiores cupiditate aut nisi necessitatibus, 
+                    laborum, ipsa, deleniti ratione quod. Esse maxime necessitatibus dignissimos eaque commodi non. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Assumenda aperiam consectetur fuga deleniti soluta quam dicta architecto ut eum culpa expedita autem, doloremque sint consequatur placeat dolorum ab. Molestiae, quas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <h4>Column 4</h4>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro nihil molestias repellendus maiores cupiditate aut nisi necessitatibus, 
+                    laborum, ipsa, deleniti ratione quod. Esse maxime necessitatibus dignissimos eaque commodi non. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Assumenda aperiam consectetur fuga deleniti soluta quam dicta architecto ut eum culpa expedita autem, doloremque sint consequatur placeat dolorum ab. Molestiae, quas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <!------------ RESPONSIVE LAYOUT AND COLLAPSING DIVS ------------>
+        <div class="row">
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-12">
+
+                <h4><a href="#col1Content" data-toggle="collapse">Column 1</a></h4>
+
+                <!-- collapsed in makes the div non-collapsed on load -->
+                <div id="col1Content" class="collapse show">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est maiores, distinctio quos deleniti, necessitatibus itaque dolor hic asperiores id, quam quibusdam nemo modi minima! Laboriosam omnis quas tempore rem consequuntur.
+                </div>
+
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-8 col-xs-12">
+
+                    <h4><a href="#col2Content" data-toggle="collapse">Column 2</a></h4>
+    
+                    <!-- collapsed in makes the div non-collapsed on load -->
+                    <div id="col2Content" class="collapse">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est maiores, distinctio quos deleniti, necessitatibus itaque dolor hic asperiores id, quam quibusdam nemo modi minima! Laboriosam omnis quas tempore rem consequuntur.
+                    </div>
+    
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                    <h4><a href="#col3Content" data-toggle="collapse">Column 3</a></h4>
+    
+                    <!-- collapsed in makes the div non-collapsed on load -->
+                    <div id="col3Content" class="collapse">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est maiores, distinctio quos deleniti, necessitatibus itaque dolor hic asperiores id, quam quibusdam nemo modi minima! Laboriosam omnis quas tempore rem consequuntur.
+                    </div>
+    
+            </div>
+
+        </div>
+
+            <div class="row">
+
+            <!-- TODO Fix these divs -->
+            
+            <!-- SCREEN RESOLUTIONS -->
+            <!-- well adds a background and a rounded border -->
+            <!-- EXTRA SMALL -->
+            <div class="well hidden-sm-up">
+                <h5>Extra Small</h5>
+                <p>Screen &lt; 544px</p>
+            </div>
+            <!-- SMALL -->
+            <div class="well hidden-xs-down hidden-md-up">
+                <h5>Small</h5> 
+                <p>Screen &GreaterEqual; 544px & &lt; 768px</p>
+            </div>
+            <!-- MEDIUM -->
+            <div class="well hidden-sm-down hideen-lg-up">
+                <h5>Medium</h5>
+                <p>Screen &GreaterEqual; 768px & &lt; 992px</p>
+            </div>
+            <!-- LARGE -->
+            <div class="well hidden-md-down hidden-xl-up">
+                <h5>Large</h5>
+                <p>Screen &GreaterEqual; 992px & &lt; 1200</p>
+            </div>
+            <!-- EXTRA LARGE -->
+            <div class="well hidden-lg-down">
+                <h5>Extra Large</h5>
+                <p>Screen &GreaterEqual; 1200px</p>
+            </div>
+            
+        </div>
+
     </div>
+
+    <br><br><br>
 
 <!-- enlarge the text and put it in a grey rounded corner box by default (box styling can be changed) -->
     <div class="jumbotron">
