@@ -1,0 +1,37 @@
+/* Element Selectors*/
+li {
+    border: 2px solid #34495e;
+}
+/* Class Selector */
+.canceled {
+    text-decoration: line-through;
+}
+
+/*ID Selectors*/
+#specialLi {
+    background-color: #1f8b4d;
+}
+
+/* Star Selector (Selects EVERYTHING) */
+* {
+    border: 1px solid lightgray;
+}
+
+/* Descending Selectors */
+li label {
+    background-color: #3498db;
+}
+/* Adjacent Selectors* (Select h1 siblings)*/
+h1 + ul {
+    color: #102399;
+}
+
+/* Attribute Selector */
+input[type="checkbox"] {
+    background-color: #7c4792;
+}
+
+/* nth of type */
+li:nth-of-type(odd) {
+    background-color: #778485;
+}
