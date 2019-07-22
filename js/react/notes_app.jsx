@@ -6,6 +6,7 @@ var Comment = class extends React.Component {
 
         this.edit = this.edit.bind(this);
         this.save = this.save.bind(this);
+        this.remove = this.remove.bind(this)
     }
 
     edit() {
@@ -15,14 +16,15 @@ var Comment = class extends React.Component {
     save(e) {
         e.preventDefault();
         let val = this.refs.newText.value;
+        this.props.updateFunction(val, this.props.index);
         console.log("New Comment: " + val);
-        this.setState(state => ({
+        this.setState(() => ({
             editing: false
         }));
     }
 
     remove(){
-        alert("Comment Removed");
+        this.props.removeFunction(this.props.index);
     }
     renderNormal() {
         return (
@@ -64,18 +66,39 @@ var Board = class extends React.Component {
                 "React is really complicated",
                 "Ok, Enough comments now"
             ]
-        }
+        };
+
+        this.removeComment = this.removeComment.bind(this);
+        this.updateComment = this.updateComment.bind(this);
+        this.eachComment = this.eachComment.bind(this);
+    }
+
+    removeComment(index) {
+        console.log("removing comment: " + index);
+        let arr = this.state.comments;
+        arr.splice(index, 1);
+        // ^^^ Removes 1 object at the index
+        this.setState({comments: arr});
+    }
+
+    updateComment(newText, index) {
+        console.log("Updating comment: " + index);
+        let arr = this.state.comments;
+        arr[index] = newText;
+        this.setState({comments: arr});
+    }
+
+    eachComment(text, index) {
+        return (
+            <Comment key={index} index={index} updateFunction={this.updateComment} removeFunction={this.removeComment}>
+                {text}
+            </Comment>
+        )
     }
 
     render() {
         return (
-            <div className="board">
-                {
-                    this.state.comments.map(function (text, index) {
-                        return (<Comment key={index}>{text}</Comment>)
-                    })
-                }
-            </div>
+            <div className="board">{this.state.comments.map(this.eachComment)}</div>
         );
     }
 
