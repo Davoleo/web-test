@@ -25,6 +25,8 @@ body {
     background: url(https://i.imgur.com/EdAGGFS.jpg) center center fixed no-repeat;
     background-size: cover;
     color: aqua;
+    font-family: Raleway, serif;
+    font-weight: normal;
 }
 
 #theDiv {
@@ -38,6 +40,9 @@ body {
     color: black;
     font-weight: bold;
     font-size: 80px;
+    text-decoration: underline;
+    text-align: center;
+    font-family: Indie Flower, serif;
     background-color:burlywood;
     background-clip: border-box
 }
