@@ -3,7 +3,16 @@
 # Data casts
 # Arithmetic
 
-# Example Comment
+# Example Single Line Comment
+
+=begin
+Example Multi-Line Comment
+ASASSASASASASSASASAS
+aSASASDADSADASDSADASD
+=end
+rescue => exception
+    
+end
 
 # prints data on the monitor (WITH NEW LINE)
 puts "Hello World!"
@@ -48,4 +57,19 @@ EXAMPLE_CONSTANT = 3.14
 EXAMPLE_CONSTANT = 1.6
 
 puts EXAMPLE_CONSTANT
+puts "----------------------------"
+
+# Return File objects
+# yourSum.out = fileName + extension
+# w: means it's going to write to it (or create it)
+write_handler = File.new("yourSum.out", "w")
+write_handler.puts("Random Text").to_s
+write_handler.close
+
+data_from_file = File.read("yourSum.out")
+puts "Data from File : " + data_from_file
+puts "----------------------------"
+
+# Load External Ruby Files
+load "hello-world.rb"
 
