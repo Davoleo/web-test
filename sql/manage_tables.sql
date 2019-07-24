@@ -19,7 +19,7 @@ CREATE TABLE `test`.`temp` (
   `idTemp` INT NOT NULL AUTO_INCREMENT,
   `tempName` VARCHAR(45) NULL,
   `tempQuantity` VARCHAR(45) NULL,
-  PRIMARY KEY (`idTemp`);
+  PRIMARY KEY (`idTemp`));
 
 
 -- Empties temp table completely (Deleting and recreating the table)
@@ -28,4 +28,4 @@ TRUNCATE temp;
 DELETE FROM temp;
 
 -- Used to delete a table
--- drop table colors;
+DROP TABLE temp;

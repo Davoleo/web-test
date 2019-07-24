@@ -11,3 +11,10 @@ INSERT INTO `test`.`colors`
 VALUES
 (2, "blue"); 
 -- The values you want to insert
+
+-- Temp table values
+INSERT INTO `test`.`temp`
+VALUES
+(1, "ABC", 11),
+(2, "DEF", 12),
+(3, "GHI", 13); 
