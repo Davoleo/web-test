@@ -13,8 +13,19 @@ CREATE TABLE `test`.`colors` (
   `colorName` VARCHAR(45) NULL,
   `colorHex` VARCHAR(45) NULL,
   PRIMARY KEY (`colorId`));
-
 show tables;
+
+CREATE TABLE `test`.`temp` (
+  `idTemp` INT NOT NULL AUTO_INCREMENT,
+  `tempName` VARCHAR(45) NULL,
+  `tempQuantity` VARCHAR(45) NULL,
+  PRIMARY KEY (`idTemp`);
+
+
+-- Empties temp table completely (Deleting and recreating the table)
+TRUNCATE temp;
+-- Empties temp table completely (Deleting the entries one by one)
+DELETE FROM temp;
 
 -- Used to delete a table
 -- drop table colors;
