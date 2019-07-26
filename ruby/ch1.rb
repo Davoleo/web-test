@@ -2,6 +2,8 @@
 # Data output and input
 # Data casts
 # Arithmetic
+# File I/O
+# Conditions
 
 # Example Single Line Comment
 
@@ -10,9 +12,6 @@ Example Multi-Line Comment
 ASASSASASASASSASASAS
 aSASASDADSADASDSADASD
 =end
-rescue => exception
-    
-end
 
 # prints data on the monitor (WITH NEW LINE)
 puts "Hello World!"
@@ -72,4 +71,72 @@ puts "----------------------------"
 
 # Load External Ruby Files
 load "hello-world.rb"
+puts "----------------------------"
 
+#Conditional Operations
+#Comparison Operators: == != < > <= >=
+#Logical Operators: (&& ||  !) --- (and or not)
+age = 12
+
+if (age >= 5) && (age <=6)
+    puts "You're in Kindergarten"
+elsif (age >= 7) && (age <= 13)
+    puts "You're in Middle School"
+    puts "You're in Middle School"
+else
+    puts "Stay Home"
+end
+puts "----------------------------"
+
+puts "true && false = " + (true && false).to_s
+puts "true || false = " + (true || false).to_s
+puts "!false = " + (!false).to_s
+puts "----------------------------"
+
+#Universal Comparison Operator ( <=> )
+
+=begin
+outputs: 
+0: if the numbers are equals
+1: if the first number is greater
+-1: if the second number is greater
+=end
+puts "5 <=> 10 = " + (5 <=> 10).to_s
+
+#unless Operator (negated if)
+unless age > 4
+    puts "No School"
+else
+    puts "Go To School"
+end
+
+#In-line conditions
+puts "you're young" if age < 30
+puts "----------------------------"
+
+#Case Statement
+print "Enter Greeting: "
+
+#chomp removes the new line from the user input
+greeting = gets.chomp
+
+#else = default
+# case = switch
+# when = case
+case greeting
+when "French", "french"
+    puts "Bounjour"
+    exit
+when "Spanish", "spanish"
+    puts "Hola"
+    exit
+else "English"
+    puts "Hello"
+end
+puts "----------------------------"
+
+#Ternary Operator
+#Condition ? Executes_if_True : Executes_if_False
+
+puts (age >= 50) ? "Old" : "Young"
+puts "----------------------------"
