@@ -1,3 +1,25 @@
 .btn-group {
     background-color: aquamarine
 }
+
+body {
+    font-size: 62.5%;
+    font-family: Arial, SansSerif, serif;
+}
+
+#info_icon {
+    height: 100px;
+    width: 100px;
+}
+
+#title {
+    font-size: 10em;
+    vertical-align: middle;
+    font-family: "Pacifico", cursive;
+    padding-left: 15px;
+    color: #191970;
+}
+
+#slogan {
+    font-size: 5.4em;
+}
