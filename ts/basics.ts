@@ -39,7 +39,24 @@ var mhaS1: Anime = {
 };
 
 document.write(mhaS1.title + " aired in " + mhaS1.releaseYear);
-document.write("<br>");
+document.write("<br><br>");
 
 //Arrays
+var OSs: string[] = ["Windows", "Mac OSX", "Linux"];
+OSs.push("Android");
+document.write(OSs.toString() + "<br><br>");
+
+var animes: Anime[] = [];
+animes.push({
+    title: "My Hero Academia",
+    score: 6.0,
+    releaseYear: 2016
+});
+animes.push({
+    title: "Food Wars! The Third Plate",
+    score: 7.5,
+    releaseYear: 2017
+});
+
+document.write(animes[1].title + " aired in " + animes[1].releaseYear);
 
