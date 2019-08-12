@@ -20,6 +20,26 @@ document.write("sampleBoolean is a " + typeof(sampleBoolean) + "<br>");
 var stringToNum: number = parseInt("5");
 var numToString: number = 5;
 document.write("numToString is a " + typeof(numToString.toString()));
+document.write("<br><br>");
 
 //Constants declaration
 const PI = 3.14159;
+
+//Creating Complex Data types (Interfaces)
+interface Anime {
+    title: String;
+    score: Number;
+    releaseYear: Number;
+}
+
+var mhaS1: Anime = {
+    title: "My Hero Academia",
+    score: 6.0,
+    releaseYear: 2016
+};
+
+document.write(mhaS1.title + " aired in " + mhaS1.releaseYear);
+document.write("<br>");
+
+//Arrays
+

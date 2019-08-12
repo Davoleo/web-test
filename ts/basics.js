@@ -14,6 +14,14 @@ document.write("sampleBoolean is a " + typeof (sampleBoolean) + "<br>");
 var stringToNum = parseInt("5");
 var numToString = 5;
 document.write("numToString is a " + typeof (numToString.toString()));
+document.write("<br><br>");
 //Constants declaration
 var PI = 3.14159;
+var mhaS1 = {
+    title: "My Hero Academia",
+    score: 6.0,
+    releaseYear: 2016
+};
+document.write(mhaS1.title + " aired in " + mhaS1.releaseYear);
+document.write("<br>");
 //# sourceMappingURL=basics.js.map
