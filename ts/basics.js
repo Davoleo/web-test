@@ -40,4 +40,15 @@ animes.push({
     releaseYear: 2017
 });
 document.write(animes[1].title + " aired in " + animes[1].releaseYear);
+//Math
+document.write("5 + 4 = " + (5 + 4) + "<br>");
+document.write("5 - 4 = " + (5 - 4) + "<br>");
+document.write("5 * 4 = " + (5 * 4) + "<br>");
+document.write("5 + 4 = " + (5 + 4) + "<br>");
+document.write("5 % 4 = " + (5 % 4) + "<br>");
+var randNumber = 1;
+document.write("randNumber++ = " + randNumber++ + "<br>");
+document.write("++randNumber = " + ++randNumber + "<br>");
+document.write("randNumber-- = " + randNumber-- + "<br>");
+document.write("--randNumber = " + --randNumber + "<br>");
 //# sourceMappingURL=basics.js.map
