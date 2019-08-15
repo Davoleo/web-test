@@ -73,4 +73,67 @@ document.write("randNumber++ = " + randNumber++ + "<br>");
 document.write("++randNumber = " + ++randNumber + "<br>");
 document.write("randNumber-- = " + randNumber-- + "<br>");
 document.write("--randNumber = " + --randNumber + "<br>");
+document.write("<br>");
+/*
+* Conditional Operators:
+* - If, Switch and Ternary work identically to JS
+* - Let  -> Exactly like ES6 restricts the variable access to "block-scope"
+*/
+let sampLet = 123;
+if (true) {
+    let sampLet = 456;
+}
 
+document.write("sampLet: " + sampLet + "<br>");
+document.write("<br>");
+/*
+* Looping:
+* for and while work identically to JS
+*
+*/
+
+var randArray = [5, 6, 7, 8];
+
+//Prints out the indexes of the array
+for (var val in randArray) {
+    document.write(val + "<br>")
+}
+
+document.write("<br>");
+
+//Prints out the values of the array
+var strArray = randArray.map(String);
+for (var val of strArray) {
+    document.write(val + "<br>")
+}
+document.write("<br>");
+//----------------------------------
+//Functions
+var getSum = function (num1: number, num2: number): number {
+    return num1 + num2;
+};
+
+var sum1: number = getSum(5, 8);
+document.write("5 + 8 = " + sum1 + "<br>");
+
+//Default values in function declaration - and optional parameters (represented with '?')
+var getDifference = function (num1: number, num2 = 2, num3?: number): number {
+    if (typeof num3 != "undefined")
+        return num1 - num2 - num3;
+    return num1 - num2;
+};
+
+document.write("5 - 2 = " + getDifference(5) + "<br>");
+document.write("5 - 2 - 3 = " + getDifference(5, 2, 3) + "<br>");
+
+//Void functions | REST parameters (AKA varargs)
+var sumAll = function (...nums: number[]): void {
+    var sum = nums.reduce((a, b) => a + b, 0); // b default value is 0
+    document.write("Sum: " + sum + "<br>");
+};
+
+sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+
+//Arrow Functions
+var incrementByOne = (x) => x + 1;
+document.write("++1 = " + incrementByOne(1) + "<br>");
