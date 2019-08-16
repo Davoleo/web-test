@@ -140,3 +140,58 @@ puts "----------------------------"
 
 puts (age >= 50) ? "Old" : "Young"
 puts "----------------------------"
+
+x = 1
+
+#Example loop do
+loop do 
+    x += 1
+
+    next unless (x % 2) == 0
+    puts x
+
+    break if x >= 10
+end
+puts "----------------------------"
+
+y = 1
+
+#Example While Loop
+while y <= 10
+    y += 1
+
+    next unless (y % 2) == 0
+    puts y
+end
+puts "----------------------------"
+
+a = 1
+
+#Example Until Loop (Negated while)
+until a >= 10
+    a += 1
+
+    next unless (a % 2) == 0
+    puts a
+end
+puts "----------------------------"
+
+numbers = [1, 2, 3, 4, 5]
+
+#Example For loop with Literal Templates (iterates over an array)
+for number in numbers do
+    print "#{number} | "
+end
+puts ""
+puts "----------------------------"
+
+food = ["bananas", "pasta", "pizza", "apples", "bacon"]
+
+#Example Each loop (foodItem Stores the temporary food as the loop cycles)
+food.each do |foodItem|
+    puts "Food List Content: #{foodItem}"
+end
+
+#Example Each Loop to cycle through numbers (Range)
+(0..5).each do |i|
+    puts "##{i}"
