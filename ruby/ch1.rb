@@ -4,6 +4,10 @@
 # Arithmetic
 # File I/O
 # Conditions
+# Ifs
+# Switches
+# Ternary
+# Loops
 
 # Example Single Line Comment
 
