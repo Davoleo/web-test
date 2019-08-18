@@ -59,18 +59,36 @@ var Board = class extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            comments: [
-                "Example Comment describing how my life is shit and all",
-                "Everyone likes pizza",
-                "Hey you, stop looking at this comment pls k thx!",
-                "React is really complicated",
-                "Ok, Enough comments now"
-            ]
+            comments: []
         };
 
         this.removeComment = this.removeComment.bind(this);
         this.updateComment = this.updateComment.bind(this);
+        this.addComment = this.addComment.bind(this);
         this.eachComment = this.eachComment.bind(this);
+        this.addExampleComments = this.addExampleComments.bind(this);
+    }
+
+    addComment(text) {
+        var arr = this.state.comments;
+        arr.push(text);
+        this.setState({comments: arr})
+    }
+
+    addExampleComments() {
+        var arr = this.state.comments;
+        var exampleComments = [
+            "Example Comment describing how my life is shit and all",
+            "Everyone likes pizza",
+            "Hey you, stop looking at this comment pls k thx!",
+            "React is really complicated",
+            "Ok, Enough comments now" ];
+
+        for (let ecomment of exampleComments)
+            arr.push(ecomment);
+
+        this.setState({comments: arr})
+
     }
 
     removeComment(index) {
@@ -98,7 +116,11 @@ var Board = class extends React.Component {
 
     render() {
         return (
-            <div className="board">{this.state.comments.map(this.eachComment)}</div>
+            <div>
+                <button style={{marginRight: "1em"}} onClick={this.addComment.bind(null, "New Comment Text")} className="button-info create">Add New</button>
+                <button onClick={this.addExampleComments} className="button-info create">Add a Couple of example Comments</button>
+                <div className="board">{this.state.comments.map(this.eachComment)}</div>
+            </div>
         );
     }
 
