@@ -187,9 +187,14 @@ console.log("the window area is: " + windowS.area);
  * Example Point class with a static method
  */
 class Point {
+
     constructor(x, y) {
         this.x = x;
         this.y = y;
+    }
+
+    logCoordinates() {
+        console.log("X : " + this.x + " | Y : " + this.y)
     }
 
     static distance(a, b) {
