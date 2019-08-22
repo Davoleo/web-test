@@ -302,6 +302,41 @@ let iterableObj = {
 };
 console.log(iterableObj);
 
+//Example Generator Function
+//Functions with checkpoints, that can be controlled by the coder
+function* sampleGenerator() {
+    yield 'apples'; //means pause
+    yield 'oranges';
+    console.log('line after oranges...');
+    yield 'corn';
+}
+
+
+let sample = sampleGenerator();
+
+// .next() means: run the gen function until the next yield statement
+// Returns an object with 2 internal properties:
+// 1: Value: Contains the yield value
+// 2: Done: true, if the function has finished running
+console.log(sample.next()); // Contains 'apples' and 'false'
+console.log(sample.next().value);   //Contains 'oranges' and 'false'
+console.log(sample.next());         //Contains 'corn' and 'false'
+console.log(sample.next());         //Contains 'undefined' and 'true'
+
+console.log('---------------------');
+
+function* getNextId() {
+    let id = 0;
+    while(id < 3)
+        yield id++;
+}
+
+let createUser = getNextId();
+console.log(createUser.next().value);
+
+console.log('---------------------');
+
+
 /**
  * ES6 Modules (Namespaces...?)
  */
