@@ -57,4 +57,27 @@ var botolo = new Cat("Botolo", "Jack");
 document.write("# of Animals : " + Animal.animalsCount() + "<br>");
 document.write("Is a Cat an Animal : " + (botolo instanceof Animal) + "<br>");
 document.write("Does Botolo have a name : " + ('name' in botolo) + "<br>");
+document.write("<br>");
+var Car = /** @class */ (function () {
+    function Car(wheels) {
+        this.wheels = wheels;
+    }
+    Car.prototype.drive = function () {
+        document.write("The car drives with " + this.wheels + " wheels <br>");
+    };
+    return Car;
+}());
+var Bycicle = /** @class */ (function () {
+    function Bycicle(wheels) {
+        this.wheels = wheels;
+    }
+    Bycicle.prototype.drive = function () {
+        document.write("The bycicle drives with " + this.wheels + " wheels <br>");
+    };
+    return Bycicle;
+}());
+var car = new Car(4);
+var bike = new Bycicle(2);
+car.drive();
+bike.drive();
 //# sourceMappingURL=oop.js.map

@@ -50,5 +50,33 @@ var botolo = new Cat("Botolo", "Jack");
 document.write("# of Animals : " + Animal.animalsCount() + "<br>");
 document.write("Is a Cat an Animal : " + (botolo instanceof Animal) + "<br>");
 document.write("Does Botolo have a name : " + ('name' in botolo) + "<br>");
+document.write("<br>");
 
+//Interfaces!   ------
+interface Vehicle {
+    drive(): any;
+}
 
+class Car implements Vehicle {
+
+    constructor(private wheels: number){}
+
+    drive(): void {
+        document.write("The car drives with " + this.wheels + " wheels <br>")
+    }
+}
+
+class Bycicle implements Vehicle {
+
+    constructor(private wheels: number){}
+
+    drive(): void {
+        document.write("The bycicle drives with " + this.wheels + " wheels <br>")
+    }
+}
+
+var car = new Car(4);
+var bike = new Bycicle(2);
+
+car.drive();
+bike.drive();
