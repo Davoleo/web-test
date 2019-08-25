@@ -80,3 +80,37 @@ var bike = new Bycicle(2);
 
 car.drive();
 bike.drive();
+document.write("<br>");
+
+//Generic Functions ------
+function getType<T>(val: T): string {
+    return typeof(val)
+}
+
+var aString = "A String";
+var aNum = 10;
+document.write(getType(aString) + "<br>");
+document.write(getType(aNum) + "<br>");
+
+function getWheels<W extends Vehicle>(vehicle: W): number {
+    return vehicle.drive();
+}
+
+getWheels(car);
+getWheels(bike);
+document.write("<br>");
+
+//Generic Classes ------
+class GenericNumber<T> {
+    add: (val1: T, val2: T) => T;
+}
+
+// --- Numbers ---
+var num = new GenericNumber<number>();
+num.add = function (x, y) {return x + y};
+document.write("5 + 4 = " + num.add(5, 4) + "<br>");
+
+// --- Strings ---
+var string = new GenericNumber<string>();
+string.add = function (x, y) {return String(Number(x) + Number(y))};
+document.write("5 + 6 = " + string.add("5", "6") + "<br>");

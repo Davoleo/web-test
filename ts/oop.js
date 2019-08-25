@@ -80,4 +80,33 @@ var car = new Car(4);
 var bike = new Bycicle(2);
 car.drive();
 bike.drive();
+document.write("<br>");
+//Generic Functions ------
+function getType(val) {
+    return typeof (val);
+}
+var aString = "A String";
+var aNum = 10;
+document.write(getType(aString) + "<br>");
+document.write(getType(aNum) + "<br>");
+function getWheels(vehicle) {
+    return vehicle.drive();
+}
+getWheels(car);
+getWheels(bike);
+document.write("<br>");
+//Generic Classes ------
+var GenericNumber = /** @class */ (function () {
+    function GenericNumber() {
+    }
+    return GenericNumber;
+}());
+// --- Numbers ---
+var num = new GenericNumber();
+num.add = function (x, y) { return x + y; };
+document.write("5 + 4 = " + num.add(5, 4) + "<br>");
+// --- Strings ---
+var string = new GenericNumber();
+string.add = function (x, y) { return String(Number(x) + Number(y)); };
+document.write("5 + 6 = " + string.add("5", "6") + "<br>");
 //# sourceMappingURL=oop.js.map
