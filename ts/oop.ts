@@ -114,3 +114,27 @@ document.write("5 + 4 = " + num.add(5, 4) + "<br>");
 var string = new GenericNumber<string>();
 string.add = function (x, y) {return String(Number(x) + Number(y))};
 document.write("5 + 6 = " + string.add("5", "6") + "<br>");
+
+//  --- Destructuring ---
+var randVals = {x: 1, y: 2, z: 3};
+var {x, y, z} = randVals;
+document.write("Normal Order: " + x + y + z + "<br>");
+
+//Flipping an array :thonk:
+[x, y, z] = [z, y, x];
+document.write("Reverse: " + x + y + z + "<br>");
+
+//Template Strings
+var multilineString = `I'm a beautiful
+multiline string that is very very 
+very crazy tasty and long`;
+document.write(multilineString + "<br>");
+document.write(`<b>${multilineString}</b>`); //Epic Interpolation :o
+
+//The Spread Operator   (Not Working yay)
+function printSum(x, y, z): void {
+    document.write("Sum : " + (x + y + z) + "<br>");
+}
+
+var args = [4, 5, 6];
+//printSum(...args);

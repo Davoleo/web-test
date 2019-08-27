@@ -11,6 +11,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var _a;
 var instantiate = WebAssembly.instantiate;
 document.write("<br>");
 // Classes
@@ -109,4 +110,22 @@ document.write("5 + 4 = " + num.add(5, 4) + "<br>");
 var string = new GenericNumber();
 string.add = function (x, y) { return String(Number(x) + Number(y)); };
 document.write("5 + 6 = " + string.add("5", "6") + "<br>");
+//  --- Destructuring ---
+var randVals = { x: 1, y: 2, z: 3 };
+var x = randVals.x, y = randVals.y, z = randVals.z;
+document.write("Normal Order: " + x + y + z + "<br>");
+//Flipping an array :thonk:
+_a = [z, y, x], x = _a[0], y = _a[1], z = _a[2];
+document.write("Reverse: " + x + y + z + "<br>");
+//Template Strings
+var multilineString = "I'm a beautiful\nmultiline string that is very very \nvery crazy tasty and long";
+document.write(multilineString + "<br>");
+document.write("<b>" + multilineString + "</b>"); //Epic Interpolation :o
+//The Spread Operator
+function printSum(x, y, z) {
+    document.write("Sum : " + (x + y + z) + "<br>");
+}
+var args = [4, 5, 6];
+// @ts-ignore
+printSum.apply(void 0, args);
 //# sourceMappingURL=oop.js.map
