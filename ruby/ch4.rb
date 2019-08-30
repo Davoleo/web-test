@@ -1,4 +1,6 @@
 # Modules
+# Polymorphism
+
 require_relative "module_human"
 
 module Animal
@@ -28,3 +30,26 @@ einstein.name = "Albert"
 puts einstein.name
 einstein.run
 puts einstein.name + " says " + einstein.act_smart
+
+# --- Polymorphism ---
+class Bird
+    def tweet(bird_type)
+        bird_type.tweet
+    end
+end
+
+class Cardinal < Bird
+    def tweet
+        puts "Tweet Tweetter"
+    end
+end
+
+class Parrot < Bird
+    def tweet
+        puts "Squawq"
+    end
+end
+
+generic_bird = Bird.new
+generic_bird.tweet(Cardinal.new)
+generic_bird.tweet(Parrot.new)
