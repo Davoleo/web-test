@@ -1,0 +1,10 @@
+//Variables in SASS | Introduced with '$'
+$primary-color: green;
+
+h1 {
+  color: $primary-color;
+}
+
+p {
+  color: $primary-color;
+}
