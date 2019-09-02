@@ -1,7 +1,16 @@
-h1 {
-  color: green; }
-
-p {
-  color: green; }
+nav ul {
+  background-color: #2C3E50;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+nav li {
+  display: inline-block; }
+nav a {
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 10px 16px;
+  text-decoration: none; }
+nav a:hover {
+  background-color: #16A085; }
 
 /*# sourceMappingURL=ch1.css.map */

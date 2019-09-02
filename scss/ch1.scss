@@ -1,10 +1,33 @@
 //Variables in SASS | Introduced with '$'
-$primary-color: green;
+$bg-color: #2C3E50;
+$hover-color: #16A085;
+$text-color: #FFFFFF;
 
-h1 {
-  color: $primary-color;
+//You can nest selectors
+//Nesting has the same effect of creating this kind of CSS selectors ( "nav ul {}" )
+nav {
+
+  ul {
+    background-color: $bg-color;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    color: $text-color;
+    display: inline-block;
+    padding: 10px 16px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: $hover-color;
+  }
+
 }
 
-p {
-  color: $primary-color;
-}
