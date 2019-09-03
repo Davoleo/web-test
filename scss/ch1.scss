@@ -31,3 +31,10 @@ nav {
 
 }
 
+#profile_name {
+  font-size: 24px;
+}
+
+@import "profile-partial";
+//Import partials ^^^^ (Other secondary SCSS Files)
+
