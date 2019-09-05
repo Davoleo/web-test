@@ -67,3 +67,9 @@ SELECT * FROM colors LIMIT 5;
 
 -- Selects all the columns of 3 rows from the colors table where colorId is greater than 8
 SELECT * FROM STUDENT WHERE colorId > 8 LIMIT 3;
+
+---------------------- BETWEEN -----------------------------------------------------------------
+
+--Shorthand version for complex conditions
+-- Selects all the columns from the colors table where the colorId is between 2 and 10 (Limits included)
+SELECT * FROM colors WHERE colorId BETWEEN 2 AND 10;
