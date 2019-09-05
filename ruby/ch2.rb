@@ -1,6 +1,7 @@
 # Functions
 # Exceptions Handling
 # Strings
+# Symbols
 
 
 def add_nums(num_1, num_2)
@@ -115,7 +116,18 @@ Escape Sequences:
 \r -> Carriage
 \t -> Tab
 \v -> Vertical Tab
-end
+=end
 
+
+#Simbols
+#Basically strings that cannot change
+# Reasons: Conserve memory | Speed up string comparison
+:davoleo
+
+puts "------------------------"
+puts :davoleo  
+puts :davoleo.to_s
+puts :davoleo.class
+puts :davoleo.object_id
 
 
