@@ -16,6 +16,19 @@ nav a:hover {
 #profile_name {
   font-size: 24px; }
 
+.Panel, .LittlePanel, .BigPanel {
+  border: 3px solid dodgerblue;
+  background-color: lightgreen;
+  margin: 10px; }
+
+.LittlePanel {
+  font-size: 12px;
+  padding: 5px; }
+
+.BigPanel {
+  font-size: 32px;
+  padding: 20px; }
+
 .ProfileImg {
   border-radius: 999px;
   height: 200px;

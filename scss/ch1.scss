@@ -35,6 +35,25 @@ nav {
   font-size: 24px;
 }
 
+// the extend keyword | Styles Inheritance
+.Panel {
+  border: 3px solid dodgerblue;
+  background-color: lightgreen;
+  margin: 10px;
+}
+
+.LittlePanel {
+  @extend .Panel;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.BigPanel {
+  @extend .Panel;
+  font-size: 32px;
+  padding: 20px;
+}
+
 @import "profile-partial";
 //Import partials ^^^^ (Other secondary SCSS Files)
 
