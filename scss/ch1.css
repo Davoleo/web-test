@@ -22,10 +22,16 @@ nav a:hover {
   margin: 10px; }
 
 .LittlePanel {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   font-size: 12px;
   padding: 5px; }
 
 .BigPanel {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
   font-size: 32px;
   padding: 20px; }
 

@@ -42,14 +42,23 @@ nav {
   margin: 10px;
 }
 
+// Mixins
+@mixin BorderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 .LittlePanel {
   @extend .Panel;
+  @include BorderRadius(5px);
   font-size: 12px;
   padding: 5px;
 }
 
 .BigPanel {
   @extend .Panel;
+  @include BorderRadius(20px);
   font-size: 32px;
   padding: 20px;
 }
