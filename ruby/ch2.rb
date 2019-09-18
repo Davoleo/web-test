@@ -3,6 +3,7 @@
 # Strings
 # Symbols
 # Arrays
+# Hashes
 
 
 def add_nums(num_1, num_2)
@@ -177,3 +178,50 @@ puts "------------------------"
 array_4.each do |value|
     puts value 
 end
+
+puts "------------------------"
+
+# Hashes
+# Store Key/Value Pairs
+number_hash = { "PI" => 3.14 ,
+                "Golden" => 1.618,
+                "e" => 2.718 }
+
+puts number_hash["PI"]
+
+anime_years = Hash["Re:Zero", 2016, "Lucky☆Star", 2007, "RErideD", 2018]
+puts anime_years["Re:Zero"]
+anime_years["Clockwork Planet"] = 2017
+
+# Creates a new hash with a warning message if an invalid key is entered
+hash_sample = Hash.new("No such key")
+puts hash_sample["§§§§§§§§§§§§§§§§§§"]
+
+anime_years_2 = Hash["Just Because!", 2017, "Angel Beats!", 2010, "Kill la Kill", 2013]
+
+# Destructive merge (Eliminates duplicates)
+anime_years.update(anime_years_2)
+
+# Non-Destructive merge
+#anime_years.merge(anime_years_2)
+
+puts "------------------------"
+
+anime_years.each do |key, value|
+    puts key.to_s + " | " + value.to_s
+end
+
+puts "------------------------"
+
+#Hash Utilities
+puts "Has Key Kill la Kill : " + anime_years.has_key?("Kill la Kill").to_s
+puts "Has Value 2007 : " + anime_years.has_value?(2007).to_s
+puts "Is Empty : " + anime_years.empty?.to_s
+puts "Size : " + anime_years.size.to_s
+
+puts "------------------------"
+
+#Remove a pair
+anime_years.delete("Just Because!")
+
+puts "Size : " + anime_years.size.to_s
