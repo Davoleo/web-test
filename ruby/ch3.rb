@@ -2,6 +2,7 @@
 # Methods
 # Properties
 # Classes
+# File I/O
 
 class Animal
 
@@ -68,3 +69,21 @@ printf "%s goes %s \n", dog_dev.name, dog_dev.bark()
 # %s : strings
 # %d : integers
 # %f : floats 
+
+puts "--------------------------"
+# File I/O
+
+file = File.new("OSList.out", "w")
+file.puts "Operating Systems:"
+file.puts "Windows"
+file.puts "Mac OS"
+file.puts "Linux Arch"
+file.close
+
+puts File.read("OSList.out")
+
+file = File.new("OSList.out", "a")
+file.puts "Linux Ubuntu"
+file.puts "Linux Manjaro"
+file.puts "Linux Fedora"
+file.close
