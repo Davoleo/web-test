@@ -3,6 +3,28 @@ $bg-color: #2C3E50;
 $hover-color: #16A085;
 $text-color: #FFFFFF;
 
+$button-bg: #006699;
+$button-padding: 5px;
+
+.Button {
+  background-color: $button-bg;
+  border-radius: 8px;
+  color: $text-color;
+  display: inline-block;
+  padding: $button-padding;
+  text-decoration: none;
+}
+
+.JumboButton {
+  @extend .Button;
+  padding: $button-padding + 30;
+}
+
+.LightButton {
+   @extend .Button;
+   background-color: $button-bg * 1.5;
+ }
+
 //You can nest selectors
 //Nesting has the same effect of creating this kind of CSS selectors ( "nav ul {}" )
 nav {
