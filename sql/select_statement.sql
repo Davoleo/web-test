@@ -68,12 +68,17 @@ SELECT * FROM colors LIMIT 5;
 -- Selects all the columns of 3 rows from the colors table where colorId is greater than 8
 SELECT * FROM STUDENT WHERE colorId > 8 LIMIT 3;
 
----------------------- BETWEEN -----------------------------------------------------------------
+---------------------- BETWEEN and IN -----------------------------------------------------------------
 
---Shorthand version for complex conditions
+--Shorthand version for complex AND conditions
 -- Selects all the columns from the colors table where the colorId is between 2 and 10 (Limits included)
 SELECT * FROM colors WHERE colorId BETWEEN 2 AND 10;
 
+-- Shorthand version for complex OR conditions
+-- Selects all the columns from the colors table where the colorId is either 4 OR 11 OR 18
+SELECT * FROM colors WHERE colorId IN (4, 11, 18);
+-- Selects all the columns from the colors table where colorName is either "red" OR "blue" OR "green"
+SELECT * FROM test.colors WHERE colorName IN ("red", "green", "blue");
 
 ---------------------- ALIASES | concat() | AS Keyword -----------------------------------------------------------------
 
