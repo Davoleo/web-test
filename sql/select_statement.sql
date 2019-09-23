@@ -88,5 +88,27 @@ SELECT colorId AS id FROM colors
 -- Selects the colorId column from the colors table giving it a header of "id" and selects the colorName and colorHex columns concatenating them under the "colorInfo" header
 SELECT colorId AS id, concat(colorName," - ",colorHex) AS colorInfo FROM colors;
 
--- Selects all the columns from the colors table in the test database concatenating them under the "colorBigConcatColumn" column
+-- Selects all the columns from the colors table concatenating them under the "colorBigConcatColumn" column
 SELECT concat(colorId," | ", colorName," | ", colorHex) as colorBigConcatColumn from test.colors;
+
+---------------------- LIKE -----------------------------------------------------------------
+-- % : Jolly Char for "any number of chars"
+-- _ : Jolly Char for "one char"
+
+-- Selects all the columns from the colors table where colorName starts with "c"
+SELECT * FROM colors WHERE colorName LIKE "c%";
+
+-- Selects all the columns from the colors table where colorName ends with "n"
+SELECT * FROM colors WHERE colorName LIKE "%n";
+
+-- Selects all the columns from the colors table where colorName contains "i"
+SELECT * FROM colors WHERE colorName LIKE "%i%";
+
+-- Selects all the columns from the colors table where colorName is 3 chars long and ends with "d"
+SELECT * FROM colors WHERE colorName LIKE "__d";
+
+-- Selects all the columns from the colors table where colorName has a "q" on the second char
+SELECT * FROM colors WHERE colorName LIKE "_q%";
+
+-- Selects all the columns from the colors table where colorId is 2 chars long and ends with "8"
+SELECT * FROM colors WHERE colorId LIKE "_8";
