@@ -73,3 +73,15 @@ SELECT * FROM STUDENT WHERE colorId > 8 LIMIT 3;
 --Shorthand version for complex conditions
 -- Selects all the columns from the colors table where the colorId is between 2 and 10 (Limits included)
 SELECT * FROM colors WHERE colorId BETWEEN 2 AND 10;
+
+
+---------------------- ALIASES | concat() | AS Keyword -----------------------------------------------------------------
+
+-- Selects the colorId column from the colors table giving it a header of "id"
+SELECT colorId AS id FROM colors
+
+-- Selects the colorId column from the colors table giving it a header of "id" and selects the colorName and colorHex columns concatenating them under the "colorInfo" header
+SELECT colorId AS id, concat(colorName," - ",colorHex) AS colorInfo FROM colors;
+
+-- Selects all the columns from the colors table in the test database concatenating them under the "colorBigConcatColumn" column
+SELECT concat(colorId," | ", colorName," | ", colorHex) as colorBigConcatColumn from test.colors;
