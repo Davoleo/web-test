@@ -1,58 +1,71 @@
-.Button, .JumboButton, .LightButton {
+/* Loud Comment */
+.Button, .LightButton, .JumboButton {
   background-color: #006699;
   border-radius: 8px;
   color: #FFFFFF;
   display: inline-block;
   padding: 5px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .JumboButton {
-  padding: 35px; }
+  padding: 35px;
+}
 
 .LightButton {
-  background-color: #0099e6; }
+  background-color: #006699;
+}
 
 nav ul {
   background-color: #2C3E50;
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+}
 nav li {
-  display: inline-block; }
+  display: inline-block;
+}
 nav a {
   color: #FFFFFF;
   display: inline-block;
   padding: 10px 16px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 nav a:hover {
-  background-color: #16A085; }
+  background-color: #16A085;
+}
 
 #profile_name {
-  font-size: 24px; }
+  font-size: 24px;
+}
 
-.Panel, .LittlePanel, .BigPanel {
+.Panel, .BigPanel, .LittlePanel {
   border: 3px solid dodgerblue;
   background-color: lightgreen;
-  margin: 10px; }
+  margin: 10px;
+}
 
 .LittlePanel {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 12px;
-  padding: 5px; }
+  padding: 5px;
+}
 
 .BigPanel {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
   font-size: 32px;
-  padding: 20px; }
+  padding: 20px;
+}
 
 .ProfileImg {
   border-radius: 999px;
   height: 200px;
   width: 200px;
-  border: 5px solid seagreen; }
+  border: 5px solid seagreen;
+}
 
 /*# sourceMappingURL=ch1.css.map */

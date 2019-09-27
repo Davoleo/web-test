@@ -1,3 +1,7 @@
+/* Loud Comment */
+// Silent Comment
+/// Documentation Comment
+
 //Variables in SASS | Introduced with '$'
 $bg-color: #2C3E50;
 $hover-color: #16A085;
@@ -22,7 +26,7 @@ $button-padding: 5px;
 
 .LightButton {
    @extend .Button;
-   background-color: $button-bg * 1.5;
+   background-color: $button-bg /*  * 1.5  */;  //Removed in dart-sass :'(    https://github.com/sass/sass/issues/2144
  }
 
 //You can nest selectors
