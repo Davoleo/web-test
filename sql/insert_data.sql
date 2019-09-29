@@ -18,3 +18,11 @@ VALUES
 (1, "ABC", 11),
 (2, "DEF", 12),
 (3, "GHI", 13); 
+
+------- INSERT INTO SELECT ---------------
+-- Used to copy data from a table to another
+
+-- Insert into the colorscopy table all the data from the colors table
+INSERT INTO colorscopy SELECT * FROM colors;
+-- Insert into the colorscopy table in the id and name columns the data from the colorId and colorName columns of the colors table
+INSERT INTO colorscopy(id, name) SELECT colorId, colorName FROM colors;
