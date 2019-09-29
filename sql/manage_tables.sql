@@ -62,3 +62,9 @@ ALTER TABLE temp change column idTemp id int NOT NULL;
 
 -- Edits temp renaming it to tempTable
 ALTER TABLE temp rename to tempTable;
+
+--------- CREATE TABLE LIKE -------------
+-- Used to create a table with the model of another table
+
+-- Create a table called temp_colors with the structure of the colors table
+CREATE TABLE temp_colors LIKE colors;
