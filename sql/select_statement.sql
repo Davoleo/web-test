@@ -112,3 +112,14 @@ SELECT * FROM colors WHERE colorName LIKE "_q%";
 
 -- Selects all the columns from the colors table where colorId is 2 chars long and ends with "8"
 SELECT * FROM colors WHERE colorId LIKE "_8";
+
+
+---------------------- UNION -----------------------------------------------------------------
+-- Used to join together 2 select statements from different tables 
+
+-- selects the colorId Column from the colors table joined with the id column from the colorscopy table (without showing duplicates)
+SELECT colorId FROM colors UNION SELECT id FROM colorscopy;
+-- selects the colorId Column from the colors table joined with the name column from the colorscopy table (without showing duplicates)
+SELECT colorId FROM colors UNION SELECT name FROM colorscopy;
+-- selects the colorId Column from the colors table joined with the name column from the colorscopy table (showing duplicates)
+SELECT colorId FROM colors UNION ALL SELECT name FROM colorscopy;
