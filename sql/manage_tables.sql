@@ -20,6 +20,7 @@ CREATE TABLE `test`.`temp` (
   `tempName` VARCHAR(45) NULL,
   `tempQuantity` VARCHAR(45) NULL,
   PRIMARY KEY (`idTemp`));
+  -- ^^^ Assigns the primary key of the table to a certain column
 
 
 -- Empties temp table completely (Deleting and recreating the table)
