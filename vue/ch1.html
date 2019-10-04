@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="vue_container">
+        <div class="container">
+            <h1 id="greetings"> {{ title }} </h1>
+        </div>
+
+        <select name="test" id="test">
+            <option value="0">Choose a Greeting</option>
+            <!-- VUE Interpolation in HTML attributes and inner content -->
+            <option :value="title">{{title}}</option>
+        </select>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="ch1.js"></script>
+</body>
+</html>
