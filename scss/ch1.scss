@@ -92,3 +92,15 @@ nav {
 @import "profile-partial";
 //Import partials ^^^^ (Other secondary SCSS Files)
 
+//Interpolation in mixins
+@mixin define-emoji($name, $char) {
+  span.emoji-#{$name} {
+    font-family: IconFont, serif;
+    font-variant: normal;
+    font-weight: normal;
+    content: $char;
+  }
+}
+
+@include define-emoji("bug", "🐛");
+@include define-emoji("lightning", "⚡️");
