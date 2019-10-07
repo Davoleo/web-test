@@ -30,6 +30,22 @@ CREATE TABLE `test`.`temp` (
     PRIMARY KEY(id), 
     UNIQUE(name));
 
+-- Using FOREIGN KEY to link two tables
+-- Foreign Keys hold an id reference to a row of another table
+-- Parent Table
+CREATE TABLE department(
+  did INT, 
+  name VARCHAR(10), 
+  PRIMARY KEY(did));
+
+-- Child Table
+CREATE TABLE student(
+  id INT, 
+  name VARCHAR(40), 
+  department int, 
+  PRIMARY KEY(id), 
+  FOREIGN KEY(department) REFERENCES department(did));
+  ---- ^                      ^
 
 -- Empties temp table completely (Deleting and recreating the table)
 TRUNCATE temp;
