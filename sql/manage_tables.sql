@@ -22,6 +22,14 @@ CREATE TABLE `test`.`temp` (
   PRIMARY KEY (`idTemp`));
   -- ^^^ Assigns the primary key of the table to a certain column
 
+-- The UNIQUE Constraint: Ensures there's no duplicate values in a column
+  CREATE TABLE sample(
+    id INT, 
+    name VARCHAR(60), 
+    color VARCHAR(60), 
+    PRIMARY KEY(id), 
+    UNIQUE(name));
+
 
 -- Empties temp table completely (Deleting and recreating the table)
 TRUNCATE temp;
