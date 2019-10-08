@@ -78,11 +78,11 @@ sortedArray.sort();
 document.write(sortedArray + "<br><br>");
 
 //INDEXOF: returns the index of the first occurrence of the item you pass as argument : if it doesn't find any item it'll return -1
-document.write(people + "<br>")
-document.write(people.indexOf("Davoleo") + "<br>")    //0
-document.write(people.indexOf("EpicSquid") + "<br>")  //3
+document.write(people + "<br>");
+document.write(people.indexOf("Davoleo") + "<br>");    //0
+document.write(people.indexOf("EpicSquid") + "<br>");  //3
 
-document.write(people.indexOf("Mcjty") + "<br><br>")      //-1
+document.write(people.indexOf("Mcjty") + "<br><br>");      //-1
 
 //SLICE: copies a portion of an array - lower bound (inclusive) - upper bound (exclusive)
 var stossoTeam = people.slice(0, 3);
@@ -108,4 +108,15 @@ associativeArray["food"] = "pizza";
 document.write( "Food = " + associativeArray["food"] + "<br><br>");
 
 //When the whole page is loaded
-window.onload = alert("JESUS likes you");
+window.onload = () => ("JESUS likes you");
+
+// Iterating over arrays ------------------------
+for (var i = 0; i < people.length; i++) {
+    document.write(people[i] + "<br/>");
+}
+document.write("<br/>");
+
+people.forEach(value => {
+    document.write(value + "<br/>");
+});
+document.write("<br/>");
