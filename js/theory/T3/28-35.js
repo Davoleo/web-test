@@ -5,9 +5,13 @@
 /**
  * Arrays, a list of items linked to a single variable
  * Inits the array with the items already in it
+ * Arrays can contain any kind of data
  * @type {string[]}
  */
 let people = ["Davoleo", "ItHurtsLikeHell", "PierKnight", "EpicSquid", "Coded", "HellFirePVP"];
+
+let emptyArray1 = [];
+let emptyArray2 = new Array();  //Uncommon
 
 //Inits an empty array of a specific size
 let initials = new Array(6);
@@ -31,39 +35,58 @@ ids[0] = 59;
 //prints out the element of the arrays stored with index between []
 document.write(people[0] + "<br><br>");
 
-//length: returns the number of elements of an array
+//LENGTH: returns the number of elements of an array
 document.write(people.length + "<br><br>");
 
-//concat: returns a new concatenated array from 2 different arrays
+//CONCAT: returns a new concatenated array from 2 different arrays
 let concatArray = initials.concat(people);
 document.write(concatArray[11] + "<br><br>");
 
-//join: takes all the items of an array and converts them into a string
+//JOIN: takes all the items of an array and converts them into a string
 let joinedArray = people.join(" - ");
 document.write(joinedArray  + "<br><br>");
 
-//pop: removes the last element from an array
-let poppedArray = people;
+//POP: removes the last element from an array
+let poppedArray = people.slice();
 document.write("Array Lenght: " +  people.length + "<br>");
 poppedArray.pop();
 document.write("Array Lenght: " + poppedArray.length + "<br><br>");
 
-//reverse: reverses the order of the item in the array
+//REVERSE: reverses the order of the item in the array
 document.write(people.reverse() + "<br>");
 document.write(people.reverse() + "<br><br>");
 
-//push: adds an item at the end of the array
-let pushedArray = people;
+//PUSH: adds an item at the end of the array
+let pushedArray = people.slice();
 document.write(pushedArray + "<br>");
 pushedArray.push("GianPiero");
 document.write(pushedArray + "<br><br>");
 //^ To restore the original array
 
-//sort: sorts the elements of the array in alphabetical order
-let sortedArray = people;
+//UNSHIFT: adds an item at the beginnin of the array
+let shiftedArray = people.slice();
+shiftedArray.unshift("Jesus");
+document.write(shiftedArray + "<br>");
+//SHIFT: removes an item from the beginning of the array
+shiftedArray.shift();
+document.write(shiftedArray + "<br><br>");
+
+//SORT: sorts the elements of the array in alphabetical order
+let sortedArray = people.slice();
 document.write(sortedArray + "<br>");
 sortedArray.sort();
 document.write(sortedArray + "<br><br>");
+
+//INDEXOF: returns the index of the first occurrence of the item you pass as argument : if it doesn't find any item it'll return -1
+document.write(people + "<br>")
+document.write(people.indexOf("Davoleo") + "<br>")    //0
+document.write(people.indexOf("EpicSquid") + "<br>")  //3
+
+document.write(people.indexOf("Mcjty") + "<br><br>")      //-1
+
+//SLICE: copies a portion of an array - lower bound (inclusive) - upper bound (exclusive)
+var stossoTeam = people.slice(0, 3);
+document.write("Stosso Team: " + stossoTeam + "<br><br>");
 
 //Prompts --------------------------------------------------
 
