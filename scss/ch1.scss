@@ -61,6 +61,13 @@ nav {
   font-size: 24px;
 }
 
+div > {
+  p {
+    //Paragraphs directly nested into divs
+  }
+  //applies to all divs
+}
+
 // the extend keyword | Styles Inheritance
 .Panel {
   border: 3px solid dodgerblue;
