@@ -62,6 +62,12 @@ CREATE TABLE sample(id INT AUTO_INCREMENT,  -- Allows you avoid inserting the fi
 -- Change the auto_increment step of a table
 ALTER TABLE sample AUTO_INCREMENT=10;
 
+-- Default Values
+CREATE TABLE default_sample(
+  id INT, 
+  name VARCHAR(33), 
+  city VARCHAR(10) DEFAULT"Tokyo"); -- If nothing is assigned to the city field, it will automatically fallback on the Default Value
+
 -- Empties temp table completely (Deleting and recreating the table)
 TRUNCATE temp;
 -- Empties temp table completely (Deleting the entries one by one)
