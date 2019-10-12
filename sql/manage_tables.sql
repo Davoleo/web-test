@@ -45,7 +45,22 @@ CREATE TABLE student(
   department int, 
   PRIMARY KEY(id), 
   FOREIGN KEY(department) REFERENCES department(did));
-  ---- ^                      ^
+  ---- ^     
+  
+-- The Not Null Constraint
+CREATE TABLE employee(
+  id INT, 
+  name VARCHAR(30), 
+  last_name VARCHAR(30) NOT NULL, -- Ensures the last name is not null
+  PRIMARY KEY(id));
+
+-- Auto-Increment
+CREATE TABLE sample(id INT AUTO_INCREMENT,  -- Allows you avoid inserting the field every time, autoincrementing it from the last row
+  name VARCHAR(20),
+  PRIMARY KEY(id));
+
+-- Change the auto_increment step of a table
+ALTER TABLE sample AUTO_INCREMENT=10;
 
 -- Empties temp table completely (Deleting and recreating the table)
 TRUNCATE temp;
