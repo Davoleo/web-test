@@ -29,7 +29,6 @@ document.write("<br><br>tuna lenght is: " + tuna.length);
  * 2: Creating an instance of the object
  */
 //OOP is usually located into the <head> of the HTML page
-
 function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -40,6 +39,15 @@ function Person(name, age) {
 
 let davoleo = new Person("Leonardo", 17);
 let ithurtslikehell = new Person("Emanuele D'Angelo", 17);
+
+let literalObject = {
+    count: 2,
+    wireless: true,
+    age: 4,
+    name: "Galaxy"
+};
+
+let emptyObject = {};
 
 //things that do stuff <body>
 document.write("<br>" + davoleo.name);
@@ -56,6 +64,52 @@ pier = {name: "Pierluigi Altimari", age:17};
 
 document.write("<br>" + pier.name);
 document.write("<br>" + pier.age);
+
+//Nested Objects and Arrays
+//An Array of objects that could contain an array as a property
+var posts = [
+    {
+        title: "Dogs are mediocre",
+        author: "Davoleo",
+        comments: ["Awesome Post", "Terrible Post"]
+    },
+    {
+        title: "AI Will Conquer the world",
+        author: "MrComputer101",
+        comments: ["Yeah, me too", "Dude ur username is shit"]
+    }
+];
+
+//Title - rating - haswatched;
+var movies = [
+    {
+        title: "I, Robot",
+        rating: "4",
+        hasWatched: true
+    },
+    {
+        title: "Glass",
+        rating: "3",
+        hasWatched: false
+    },
+    {
+        title: "Zombieland",
+        rating: "3",
+        hasWatched: false
+    },
+    {
+        title: "Maleficent: Mistress of Evil",
+        rating: "2",
+        hasWatched: false
+    }
+];
+
+for (let i = 0; i < movies.length; i++) {
+    if (movies[i].hasWatched)
+        console.log("You have watched \"" + movies[i].title + "\" - " + movies[i].rating + " stars")
+    else
+        console.log("You haven't watched " + movies[i].title + " - " + movies[i].rating + " stars")
+}
 
 /**
  * Adding methods to custom objects

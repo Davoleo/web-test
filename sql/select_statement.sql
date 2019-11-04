@@ -123,3 +123,6 @@ SELECT colorId FROM colors UNION SELECT id FROM colorscopy;
 SELECT colorId FROM colors UNION SELECT name FROM colorscopy;
 -- selects the colorId Column from the colors table joined with the name column from the colorscopy table (showing duplicates)
 SELECT colorId FROM colors UNION ALL SELECT name FROM colorscopy;
+
+-------------------------- JOIN ----------------------------------------------------------------
+-- Used to join together 2 tables
