@@ -55,6 +55,7 @@ CREATE TABLE employee(
   PRIMARY KEY(id));
 
 -- Auto-Increment
+-- When Inserting new records into the table we can skip the Primary Key that will be automatically assigned at the last PK incremented by one
 CREATE TABLE sample(id INT AUTO_INCREMENT,  -- Allows you avoid inserting the field every time, autoincrementing it from the last row
   name VARCHAR(20),
   PRIMARY KEY(id));
@@ -114,3 +115,9 @@ ALTER TABLE temp rename to tempTable;
 
 -- Create a table called temp_colors with the structure of the colors table
 CREATE TABLE temp_colors LIKE colors;
+
+--------- ADD A NEW INDEX --------
+-- Adds an index to the specified column
+ALTER TABLE temp ADD INDEX (tempName);
+-- Removes index from the specified column
+ALTER TABLE temp DROP INDEX (tempName);
