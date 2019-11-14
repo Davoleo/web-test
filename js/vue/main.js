@@ -4,104 +4,91 @@
 
 var App = Vue.component("App", {
     template: `
-   <div class="container">
-    <h1 v-once>{{ title }}</h1>
-<!--    ^^ locks the element to the first render update -->
-    <p><span v-bind:style="colorRed">5 + 3 = </span>{{ 5 + 3 }}</p>
-<!--          ^^ Links the style rendering to the colorRed prop   -->
-    <p><span v-bind:style="{color: color}">5 + 3 = </span>{{ 5 + 3 }}</p>
-    <p>{{ user.firstName }} {{user.secondName}}</p>
-    <p>{{user.getFullName()}}</p>
-    <p><a :href="myUrl">Check out this website</a></p>
-<!--    ^^ Brief form for v-bind:    -->
-    <button class="btn btn-primary" :disabled="isDisabled">Click</button>
-    <p>Is this button Disabled? {{isDisabled ? " Yes" : " No"}}</p>
-    <p>Complete name all caps: {{user.getFullName().toUpperCase()}}</p>
-    <hr>
-    
-    <!--    v-if only renders the element if the passed boolean is true -->
-    <div v-if="buttonEnabled">
-        <button class="btn btn-primary">Remove File</button>    
-    </div>
-    <div v-else>
-        User doesn't have permissions to remove files
-    </div>
-    <hr>
-    
-<!--  When using a template instead of a div to sorround controls, only the content of the container will be rendered  -->
-    <template v-if="buttonEnabled">
-        <button class="btn btn-dark">Remove File</button>    
-    </template>
-    <template v-else>
-        User doesn't have permissions to remove files
-    </template>
-    <hr>
-    
-<!--  If | Else If | Else  -->
-    <template v-if="type === 'A'">
-        A
-    </template>
-    <template v-else-if="type === 'B'">
-        B
-    </template>
-    <template v-else-if="type === 'C'">
-        C
-    </template>
-    <template v-else>
-        Not A/B/C
-    </template>
-    <hr>
+        <div class="container">
+            <Products />            
+        </div>
+    `,
+    data() {
+        return {};
+    }
+});
 
-<!-- Form Example -->
-<!-- View doesn't re-render the input control automatically to make everything as lightweight as possible, if you want controls to render again you need to differentiate them by using a key -->
-    <form>
-        <div class="form-group">
-            <template v-if="loginType === 'username'">
-                <label>Username</label>
-                <input key="username" class="form-control" placeholder="Enter your username">                           
-            </template>
-            <template v-else>
-                <label>E-mail</label>
-                <input key="email" class="form-control" placeholder="Enter your e-mail address">            
-            </template>
-        </div>    
-    </form>
-    <button v-on:click="byUsername()" class="btn btn-primary">By Username</button>
-    <button v-on:click="byEmail()" class="btn btn-primary">By E-mail</button>
-    <hr>
+var Products = Vue.component("Products", {
+    template: `
+        <div>
+            <h2>Product List</h2>
+            
+            <div>
+                <ProductBox :key="product.id" v-for="product in products" v-bind:item="product" />            
+            </div>        
+        </div>
+    `,
 
-<!--    Lightweight alternative to v-if (v-show) -->
-    <button v-show="antistress" class="btn btn-danger">Panic Button</button>
-    
-   </div>
-  `,
     data() {
         return {
-            title: "Hello World!",
-            color: "red",
-            colorRed: "color: red",
-            myUrl: "https://www.example.com",
-            isDisabled: false,
-            user: {
-                firstName: "Mario",
-                secondName: "Rossi",
-                getFullName: function () {
-                    return this.firstName + " " + this.secondName;
-                }
+            products: [
+            {
+                id: 1,
+                name: "Product 1",
+                description: "Short Product Description",
+                price: 15,
+                availability: 100
             },
-            buttonEnabled: true,
-            type: "B",
-            loginType: "username",
-            byUsername() {
-                this.loginType = "username"
+            {
+                id: 2,
+                name: "Product 2",
+                description: "Short Product Description",
+                price: 12,
+                availability: 98
             },
-            byEmail() {
-                this.loginType = "email"
+            {
+                id: 3,
+                name: "Product 3",
+                description: "Short Product Description",
+                price: 5,
+                availability: 56
             },
-            antistress: true
+            {
+                id: 4,
+                name: "Product 4",
+                description: "Short Product Description",
+                price: 24,
+                availability: 32
+            },
+            {
+                id: 5,
+                name: "Product 5",
+                description: "Short Product Description",
+                price: 32,
+                availability: 15
+            },
+            {
+                id: 6,
+                name: "Product 6",
+                description: "Short Product Description",
+                price: 8,
+                availability: 57
+            }
+        ]
         };
     }
 });
+
+var ProductBox = Vue.component("ProductBox", {
+   template: `
+        <div class="card" style="width: 240px; float: left; margin: 16px">
+            <img class="card-img-top" v-bind:src="'https://picsum.photos/240/240?image=' + item.id">
+            <div class="card-body">
+                <h4 class="card-title">{{ item.name }}</h4>
+                <p class="card-text">{{ item.description }}</p>
+                <p class="card-text text-right"><strong>Price: € {{item.price}}</strong></p>
+                <button class="btn btn-secondary">Details</button>
+            </div>
+        </div>
+   `,
+    props: ['item']
+});
+
 
 new Vue({
     el: "#vueContainer",
