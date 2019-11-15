@@ -113,6 +113,24 @@ SELECT * FROM colors WHERE colorName LIKE "_q%";
 -- Selects all the columns from the colors table where colorId is 2 chars long and ends with "8"
 SELECT * FROM colors WHERE colorId LIKE "_8";
 
+---------------------- OPERATORS ------------------------------------------
+-- Selects the minimum value for a table field
+SELECT MIN(eta) FROM atleti;
+SELECT nome, cognome WHERE eta = (SELECT MIN(eta) FROM atleti) FROM atleti;
+-- Selects the maximum value for a table field
+SELECT MAX(eta) FROM atleti;
+-- Selects the average value for a table field
+SELECT AVG(eta) FROM atleti;
+
+-- Selects the surname of the athletes where age is below the average
+SELECT COGNOME FROM ATLETI WHERE ETA < (SELECT AVG(ETA) FROM ATLETI);
+
+-- Selects the number of athletes where age is equal to 18
+-- inside count paretheses you can specify a column whose values should not be null to be added in the count
+SELECT COUNT(*) FROM ATLETI WHERE ETA=18;
+
+-- Selects the sum of the ages of all the athletes
+SELECT SUM(ETA) FROM ATLETI;
 
 ---------------------- UNION -----------------------------------------------------------------
 -- Used to join together 2 select statements from different tables 
