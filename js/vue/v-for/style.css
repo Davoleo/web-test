@@ -1,0 +1,7 @@
+body { margin: 16px;}
+td {border: 1px solid blueviolet;}
+.yellow {border: 1px solid black; background-color: yellow;
+  min-height: 100px;}
+
+.blue {border: 1px solid black; background-color: blue;
+    min-height: 50px; color: white;}
