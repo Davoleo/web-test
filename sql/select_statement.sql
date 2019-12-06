@@ -51,13 +51,13 @@ SELECT colorHex FROM colors WHERE (colorId > 2 AND colorId <= 11) OR colorName="
 
 ---------------------- ORDER BY -------------------------------------------------------
 
--- Selects all the columns from the colors table and shows them in alphabetical order by colorName
-SELECT * FROM colors ORDER BY colorName;
+-- Selects all the columns from the colors table and shows them in alphabetical order by colorName, if 2 colorName entries are identical they'll be ordered by colorId
+SELECT * FROM colors ORDER BY colorName, colorId;
 
 -- Selects all the columns from the colors table and shows them in alphabetical order by colorId
 SELECT * FROM colors ORDER BY colorId;
 
--- Selects all the columns from the colors table and shows them in descending alphabetical order by colorId
+-- Selects all the columns from the colors table where colorId is greater than 8 and shows them in descending alphabetical order by colorId
 SELECT * FROM colors WHERE colorId>8 ORDER BY colorId DESC;
 
 ----------------------  LIMIT ----------------------------------------------------------------
@@ -144,3 +144,15 @@ SELECT colorId FROM colors UNION ALL SELECT name FROM colorscopy;
 
 -------------------------- JOIN ----------------------------------------------------------------
 -- Used to join together 2 tables
+
+-- JOIN CONDITION WITH OtO / OtM links
+-- Selects nomeNazione, cognome and nome from the nazioni and atleti tables where idNazione equals nazione, everything ordered by nomeNazione
+SELECT NOMENAZIONE, COGNOME, NOME FROM nazioni, atleti WHERE IDNAZIONE=NAZIONE ORDER BY NOMENAZIONE;
+
+-- JOIN CONDITION WITH MtM LINKS
+-- Selects cognome, nome, nomeDisciplina from atleti, atletidiscipline, nazioni and discipline tables where idAtleta equals atleta, idDisciplina equals disciplina and nazione equals idNazione, everything ordered by cognome and nome
+SELECT COGNOME, NOME, NOMEDISCIPLINA, NOMENAZIONE
+FROM atleti, atletidiscipline, discipline, nazioni
+WHERE idAtleta=atleta AND idDisciplina=disciplina AND idNazione=nazione
+ORDER BY cognome, nome; 
+
