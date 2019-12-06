@@ -102,3 +102,71 @@ function replaceElements() {
 
     child.parentNode.replaceChild(testText, child);
 }
+
+//DOM EVENTS
+//element.addEventListener(type, functionToCall);
+var goodbyeTitle = document.getElementById("goodbye");
+goodbyeTitle.addEventListener("click", function () {
+    goodbyeTitle.style.backgroundColor = "#578472"
+});
+
+document.querySelector("ul").addEventListener("click", function () {
+    console.log("UL WAS FUCKiNG CLiCKED");
+    document.body.classList.toggle("Pink")
+});
+
+// Score Keeper ---------------------------------
+var button1 = document.getElementById("button1");
+var button2 = document.getElementById("button2");
+var resetButton = document.querySelector("#reset-button");
+
+var span1 = document.getElementById("score1");
+var span2 = document.getElementById("score2");
+
+var gameOver;
+var limitBox = document.querySelector("input");
+var limit = Number(limitBox.value);
+document.querySelector("p>span").textContent = limit;
+
+var score1 = 0;
+var score2 = 0;
+
+button1.addEventListener("click", function () {
+    if (!gameOver) {
+        score1++;
+        if (score1 === limit) {
+            gameOver = true;
+            span1.classList.add("Winner");
+        }
+        span1.textContent = score1.toString();
+    }
+});
+
+button2.addEventListener("click", function () {
+    if (!gameOver) {
+        score2++;
+        if (score2 === limit) {
+            gameOver = true;
+            span2.classList.add("Winner");
+        }
+        span2.textContent = score2.toString();
+    }
+});
+
+resetButton.addEventListener("click", reset);
+
+function reset() {
+    score1 = 0;
+    score2 = 0;
+    span1.textContent = "0";
+    span2.textContent = "0";
+    span1.classList.remove("Winner");
+    span2.classList.remove("Winner");
+    gameOver = false;
+}
+
+limitBox.addEventListener("change", function () {
+    document.querySelector("p>span").textContent = this.value;
+    limit = Number(this.value);
+    reset();
+});

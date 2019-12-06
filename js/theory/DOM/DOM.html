@@ -8,6 +8,14 @@
             border: #2e43a0 solid 3px;
             margin: 1em;
         }
+
+        .Pink {
+            background-color: #EF4093;
+        }
+
+        .Winner {
+            color: #1f8b4d;
+        }
     </style>
 </head>
 <body class="Main">
@@ -24,7 +32,7 @@
 
 <div id="container"></div>
 
-<h1>Goodbye</h1>
+<h1 id="goodbye">Goodbye</h1>
 <ul>
     <li id="highlight">Item 1</li>
     <li class="Bold">Item 2</li>
@@ -32,6 +40,19 @@
 </ul>
 
 <a href="https://www.google.com">Google.com</a>
+
+<!-- Score Keeper -->
+<hr>
+
+<h1>Score Keeper</h1>
+<h1><span id="score1">0</span> to <span id="score2">0</span></h1>
+
+<p>Playing to: <span>NONE</span></p>
+
+<input min="1" value="5" type="number">
+<button id="button1">Player 1</button>
+<button id="button2">Player 2</button>
+<button id="reset-button">Reset</button>
 
 <script type="text/javascript" src="dom.js"></script>
 
