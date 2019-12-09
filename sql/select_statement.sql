@@ -156,3 +156,20 @@ FROM atleti, atletidiscipline, discipline, nazioni
 WHERE idAtleta=atleta AND idDisciplina=disciplina AND idNazione=nazione
 ORDER BY cognome, nome; 
 
+
+-------------------------- GROUP BY ----------------------------------------------------------
+
+-- Selects eta and number of athletes for each eta condensing identical eta values
+SELECT ETA, COUNT(*) AS ATHLETE_COUNT
+FROM ATLETI WHERE NAZIONE != 3 GROUP BY ETA;
+
+-- Selects eta and number of athletes for each eta condensing identical eta values, then excludes etas not having a count of atheletes greater than 1
+SELECT ETA, COUNT(*) AS ATHLETE_COUNT
+FROM ATLETI WHERE NAZIONE != 3 GROUP BY ETA
+HAVING COUNT(*) > 1;
+
+-- Selects IdAtleta, cognome, and the count of atleti, from atleti and atletidiscipline where idAtleta equals atleta grouped by idatleta and cognome, ordered by descending cognome
+SELECT COGNOME, COUNT(*) FROM ATLETI, atletidiscipline
+WHERE idAtleta=atleta GROUP BY IDATLETA, COGNOME ORDER BY COGNOME DESC;
+
+----------------------------- NESTED QUERIES (SUBQUERIES) ------------------------------------

@@ -2,7 +2,7 @@
 DELETE FROM colors WHERE colorId=7;
 
 -- DELETE FROM atleti WHERE nazione = <expression that returns the right nazione id> | 
--- Subquery - Nestede Select Query
+-- Subquery - Nested Select Query
 DELETE FROM atleti WHERE nazione = (SELECT idnazione FROM nazioni WHERE nomenazione="Svizzera");
 
 INSERT INTO atleti VALUES (7, 'Donati', 'Marco', 23, 7), (8, 'Ferretti', 'Roberto', 18, 7);
