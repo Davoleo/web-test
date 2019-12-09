@@ -173,3 +173,26 @@ SELECT COGNOME, COUNT(*) FROM ATLETI, atletidiscipline
 WHERE idAtleta=atleta GROUP BY IDATLETA, COGNOME ORDER BY COGNOME DESC;
 
 ----------------------------- NESTED QUERIES (SUBQUERIES) ------------------------------------
+
+-- Selects cognome and nome from atleti where eta is less than the average eta from atleti
+SELECT COGNOME, NOME FROM ATLETI WHERE ETA < (SELECT AVG(ETA) FROM ATLETI);
+
+-- Selects cognome and nome from atleti where eta is equals to the max eta from atleti
+SELECT COGNOME, NOME FROM ATLETI WHERE ETA = (SELECT MAX(ETA) FROM ATLETI);
+
+-- Selects nomenazione from nazioni where idnazione is in IDNAZIONE from nazioni and atleti where idnazione=nazione (join condition) and eta is greater than 20
+-- you can negate in with a NOT
+SELECT NOMENAZIONE FROM NAZIONI
+WHERE IDNAZIONE IN (SELECT IDNAZIONE FROM NAZIONI, ATLETI WHERE IDNAZIONE=NAZIONE AND ETA > 20)
+
+-- Compare single values with array of values
+-- you can use = ANY (list) to check if something is equals to any item of a list
+-- you can use = ALL (list) to check against every item in the list
+
+-- Selects cognome from atleti where nazione = any nazione from atleti and nazioni where cognome="Ferrari" and nome="Giacomo"
+SELECT COGNOME FROM ATLETI 
+WHERE NAZIONE = ANY (SELECT NAZIONE FROM ATLETI, NAZIONI WHERE IDNAZIONE=NAZIONE AND COGNOME='Ferrari' AND NOME='Giacomo');
+
+-- Selects all the nazioni that have at least one atleta
+SELECT NAZ.NOMENAZIONE FROM NAZIONI AS NAZ
+WHERE EXISTS (SELECT * FROM NAZIONI, ATLETI WHERE IDNAZIONE=NAZIONE AND NAZIONI.NOMENAZIONE=NAZ.NOMENAZIONE);
