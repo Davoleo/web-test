@@ -164,6 +164,10 @@ FROM atleti, atletidiscipline, discipline, nazioni
 WHERE idAtleta=atleta AND idDisciplina=disciplina AND idNazione=nazione
 ORDER BY cognome, nome; 
 
+-- THETA JOIN
+-- Selects nome and cognome from atleti inner joined with nazioni where nazione is less than idnazione"
+SELECT NOME, COGNOME FROM ATLETI INNER JOIN NAZIONI ON NAZIONE < IDNAZIONE;
+
 
 -------------------------- GROUP BY ----------------------------------------------------------
 
