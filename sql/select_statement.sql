@@ -145,7 +145,9 @@ SELECT colorId FROM colors UNION ALL SELECT name FROM colorscopy;
 -------------------------- JOIN ----------------------------------------------------------------
 -- Used to join together 2 tables
 
--- EQUI JOIN ------------------------------------
+-- INNER JOINS ----------------------------------------------------------
+
+-- EQUI JOIN 
 -- Inner joins that use equality criteria
 
 -- JOIN CONDITION WITH OtO / OtM links
@@ -167,6 +169,18 @@ ORDER BY cognome, nome;
 -- THETA JOIN
 -- Selects nome and cognome from atleti inner joined with nazioni where nazione is less than idnazione"
 SELECT NOME, COGNOME FROM ATLETI INNER JOIN NAZIONI ON NAZIONE < IDNAZIONE;
+
+-- OUTER JOINS --------------------------------------------------------------------------
+-- Select all the rows at least once - If there's no entries for a specific row then it's selected as null
+
+-- Selects all the columns from nazioni left outer joined with atleti on nazione/idNazione
+SELECT DISTINCT * FROM NAZIONI LEFT OUTER JOIN ATLETI ON IDNAZIONE=NAZIONE;
+
+-- Selects all the columns from nazioni right outer joined with atleti on nazione/idNazione
+SELECT DISTINCT * FROM NAZIONI RIGHT OUTER JOIN ATLETI ON IDNAZIONE=NAZIONE;
+
+-- Selects all the columns from nazioni left outer joined with atleti on nazione/idNazione
+SELECT DISTINCT * FROM NAZIONI LEFT OUTER JOIN ATLETI ON IDNAZIONE=NAZIONE WHERE NOME IS NULL;
 
 
 -------------------------- GROUP BY ----------------------------------------------------------
