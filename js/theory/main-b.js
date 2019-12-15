@@ -17,10 +17,10 @@ function onLoad() {
  *
  *  write() is a method
  *  document is an object
- *  lenght is a property of tuna
+ *  lenght is a property of pike
  */
-let tuna = "Hey I'm a tuna fish!";
-document.write("<br><br>tuna lenght is: " + tuna.length);
+let pike = "Hey I'm a pike fish!";
+document.write("<br><br>pike lenght is: " + pike.length);
 
 /**
  * Creating custom Objects

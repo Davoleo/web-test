@@ -9,4 +9,4 @@ var app = new Vue({
 
 document.getElementById("greetings").addEventListener("click", function () {
     app.title = "HOW YOU DARE TO CLICK ME!"
-})
+});
