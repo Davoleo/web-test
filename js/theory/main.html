@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Theory</title>
+</head>
+<body onload="onLoad();">
+
+<form>
+    <input type="button" value="Click Me!" onclick="exampleFunction()">
+</form>
+
+<!--
+Event handlers:
+onclick: called when you click a certain component of the web page
+onmouseover: called when you hover over a certain component of the web page
+onmouseout: called when you finish to hover over a certain component of the web page
+onload: specific <body> event handler, called when the page is completely loaded
+onunload: should be called when you leave the web page (it often doesn't work)
+-->
+
+<script type="text/javascript" src="main-a.js"></script>
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+<span id="sampleLine">Sample Text Line</span>
+
+<!-- Event handlers lets you run javascript code when the user triggers a specific event (Example: onclick) -->
+<form>
+    <input type="button" value="CLICK ME" onclick="alert('aah!'); alert('eventhandler');" onmouseout="onHover();">
+    <input type="checkbox" onchange="changeCase()" value="Switch case">
+</form>
+<br>
+<a href="https://davoleo.github.io" onmouseover="onHover();">Hover over me!</a>
+<br>
+
+random text on the screen!
+
+<script type="text/javascript" src="main-b.js"></script>
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+<input id="date" type="text"><br><br>
+
+<div style="background-color: #a39608; padding:8px;">
+    <form>
+        Username: <input type="text">
+        Password: <input type="password">
+        <input type="submit" value="Submit!">
+    </form>
+</div>
+<br>
+<div id="form" style="background-color: #08b42b ; padding:8px;">
+    <form name="secondForm">
+        Fave Color: <input type="color" name="faveColor">
+        Fave Animal: <input type="text" name="faveAnimal">
+        Check? <input type="checkbox" name="checkbox">
+        <input type="submit" value="Submit!" onclick="validate()">
+    </form>
+</div>
+
+<script></script>
+
+
+</body>
+</html>
