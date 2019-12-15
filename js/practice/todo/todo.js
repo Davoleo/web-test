@@ -37,4 +37,21 @@ while (!quit) {
 
         default:
     }
+
+
+    var todos = document.querySelectorAll("#todos > li");
+    todos.forEach(value => {
+        //you can do this alternatively with the css pseudo-class :hover
+        value.addEventListener("mouseover", function () {
+            value.style.color = "green";
+        });
+
+        value.addEventListener("mouseout", function () {
+            value.style.color = "black";
+        });
+
+        value.addEventListener("click", function () {
+            this.classList.toggle("Done");
+        })
+    })
 }
