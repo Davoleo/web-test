@@ -24,3 +24,10 @@ DELIMITER;
 -- Calling a stored procedures
 CALL elencoAtleti();
 
+-- Stored  procedure with parameters 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `atleti_by_eta`(in _eta int)
+BEGIN
+	SELECT * FROM atleti WHERE eta=_eta;
+END
+
+CALL atleti_by_eta(18);
