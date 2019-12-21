@@ -1,0 +1,90 @@
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: "Montserrat", "Avenir", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: steelblue;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    /*Transitions*/
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    color: steelblue;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: inherit;
+    outline: none;
+
+    /*Transitions*/
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+button:hover {
+    color: white;
+    background-color: steelblue;
+}
+
+.Square {
+    width: 30%;
+    background-color: orangered;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 15%;
+
+    /*Transitions*/
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+}
+
+.Selected {
+    color: white;
+    background-color: steelblue;
+}
+
+#container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#status-bar {
+    background-color: white;
+    height: 30px;
+    text-align: center;
+}
+
+#color-text {
+    font-size: 150%;
+}
+
+#click-result {
+    display: inline-block;
+    width: 20%;
+    text-transform: uppercase;
+    color: steelblue;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
