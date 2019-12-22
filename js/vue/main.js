@@ -20,9 +20,53 @@ var Products = Vue.component("Products", {
             
             <div>
                 <ProductBox :key="product.id" v-for="product in products" v-bind:item="product" />            
-            </div>        
+            </div>
+            
+            <div>
+                <h4>{{getFullName()}}</h4>
+                <h4>{{fullName}}</h4>
+                <input type="text" v-model:value="fullName" />
+            </div>
+            
+            <button @click="count++">INCREMENT COUNT</button>
         </div>
     `,
+
+    // The first time vue calls the function, then  it caches the results
+    computed: {
+        fullName: {
+            get: function () {
+                if (this.surname !== '')
+                    return this.name + ' ' + this.surname;
+                else
+                    return this.name;
+            },
+
+            set: function (val) {
+                var text = val.split(' ');
+                this.name = text[0];
+                if (text.length > 1) {
+                    if (text.length < 3)
+                        this.surname = text[1];
+                    else
+                        this.surname = text.slice(1, text.length).join(' ');
+                } else
+                    this.surname = '';
+            }
+        }
+    },
+
+    //Always Called
+    methods: {
+        getFullName: function () {
+            return this.surname + " " + this.name;
+        }
+    },
+
+    //Calls a function every time the value of a variable is changed
+    watch: {
+        count: (val) => { console.log(val); }
+    },
 
     data() {
         return {
@@ -69,7 +113,10 @@ var Products = Vue.component("Products", {
                 price: 8,
                 availability: 57
             }
-        ]
+        ],
+            name: "Mario",
+            surname: "Rossi",
+            count: 0
         };
     }
 });
