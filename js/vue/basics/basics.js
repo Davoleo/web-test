@@ -2,6 +2,8 @@
  *  Coded By Davoleo
  ********************/
 
+//TODO Migrate all this shit
+
 var Basics = Vue.component("Basics", {
     template: `
    <div class="container">

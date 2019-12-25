@@ -20,6 +20,17 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-    <script src="main_ter.js"></script>
+
+    <script src="../../../lib/jquery-3.4.1.min.js"></script>
+
+<!--  Load one of the the scripts dynamically -->
+    <script type="text/javascript">
+        var scriptName = prompt('write "main.js" to access the first script | "main_bis.js" to access the second | "main_ter.js" to access the third script');
+
+        $(document).ready(function () {
+            $.getScript(scriptName);
+        })
+
+    </script>
 </body>
 </html>

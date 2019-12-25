@@ -2,10 +2,13 @@
 var App = Vue.component("App", {
   template: `
     <div class="container">
+      <p><strong>!!This html page refers to the FIRST main.js!!</strong></p>
+      
       <ul>
 	      <li v-for="user in users" v-bind:key="user.id">{{user.name}}</li>
       </ul>  
     </div>
+    
   `,
   data() {
     return {
@@ -23,8 +26,6 @@ var App = Vue.component("App", {
           name: "User 3"
         }
       ]
-      
-
     };
   }
 });

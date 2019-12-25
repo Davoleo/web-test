@@ -1,5 +1,6 @@
 Vue.component("user-app", {
   template: `
+    <p><strong>!!This html page refers to the SECOND main.js!!</strong></p>
     <button class="btn btn-outline-primary">
       {{item.name}} 
       {{item.name}} 

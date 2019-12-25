@@ -2,6 +2,7 @@
 var App = Vue.component("App", {
   template: `
     <div class="container">
+    <p><strong>!!This html page refers to the THIRD main.js!!</strong></p>
     <table>
       <tbody>
         <tr v-for="(utente, index) of utenti" :key="index">
