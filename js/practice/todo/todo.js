@@ -19,7 +19,7 @@ $("input[type='text']").keypress(function (event) {
     if (event.which === 13) {
         let todo = $(this).val();
         if (todo !== "" && todo !== undefined) {
-            $("ul").append("<li><span>X</span> " + todo + "</li>");
+            $("ul").append("<li><span><i class='material-icons\'>remove</i></span> " + todo + "</li>");
             $(this).val("");
         }
     }
