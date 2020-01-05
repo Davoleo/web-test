@@ -1,5 +1,4 @@
 /* TODO: OFFSET THE FREAKING ICONS */
-
 body {
     font-family: Roboto, serif;
 
@@ -11,24 +10,6 @@ body {
     background-repeat: no-repeat;
     background-clip: border-box;
     height: 100vh;
-}
-
-#container {
-    width: 500px;
-    margin: 100px auto;
-    user-select: none;
-    background-color: #F7F7F7;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    background-color: #2980B9;
-    color: white;
-    margin: 0;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: normal;
 }
 
 h1 > i {
@@ -45,6 +26,7 @@ input {
     padding: 13px 13px 13px 20px;
     color: #202020;
     border: 3px solid transparent;
+    display: none;
 
     /* So that the width prop takes into account all the space till the border including the padding (default value is content-box) */
     box-sizing: border-box;
@@ -96,4 +78,12 @@ li:hover span {
 .Done {
     color: gray;
     text-decoration: line-through;
+}
+
+#container {
+    width: 500px;
+    margin: 100px auto;
+    user-select: none;
+    background-color: #F7F7F7;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }

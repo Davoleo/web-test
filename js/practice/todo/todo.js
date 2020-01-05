@@ -24,3 +24,7 @@ $("input[type='text']").keypress(function (event) {
         }
     }
 });
+
+$("h1 .material-icons").click(function () {
+    $("input[type='text']").fadeToggle();
+});
