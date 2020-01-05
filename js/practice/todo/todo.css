@@ -1,0 +1,16 @@
+
+#container {
+    border: 2px solid gray;
+    width: 500px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.Done {
+    color: gray;
+    text-decoration: line-through;
+}
+
+span {
+    cursor: pointer!important;
+}

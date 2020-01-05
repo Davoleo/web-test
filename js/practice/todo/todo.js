@@ -2,56 +2,25 @@
  *  Coded By Davoleo
  ********************/
 
-var todos = [];
-var quit = false;
+//Add a listener on all the LIs inside the UL so that every new LI gets his event handler
+$("ul").on("click", "li", function () {
+    $(this).toggleClass("Done");
+});
 
-while (!quit) {
-    var input = prompt("Select an option: ");
+$('ul').on("click", "li > span", function (event) {
+    $(this).parent().fadeOut(1000, function () {
+        $(this).remove();
+    });
+    //Stops event propagation to the parent elements
+    event.stopPropagation();
+});
 
-    switch (input)
-    {
-        case "list":
-            console.log("--------------------------");
-            todos.forEach((value, index) => {
-                console.log(index + ": " + value);
-            });
-            console.log("--------------------------");
-            break;
-
-        case "new":
-            var todo = prompt("Enter a new todo: ");
-            todos.push(todo);
-            console.log(todo + " was added to TODOs");
-            break;
-
-        case "delete":
-            var index = parseInt(prompt("Index of the item you want to remove: "));
-            var deletedItem = todos.splice(index, 1);
-            console.log(deletedItem + " was removed from TODOs");
-            break;
-
-        case "quit":
-            quit = true;
-            console.log("You Quit the App");
-            break;
-
-        default:
+$("input[type='text']").keypress(function (event) {
+    if (event.which === 13) {
+        let todo = $(this).val();
+        if (todo !== "" && todo !== undefined) {
+            $("ul").append("<li><span>X</span> " + todo + "</li>");
+            $(this).val("");
+        }
     }
-
-
-    var todos = document.querySelectorAll("#todos > li");
-    todos.forEach(value => {
-        //you can do this alternatively with the css pseudo-class :hover
-        value.addEventListener("mouseover", function () {
-            value.style.color = "green";
-        });
-
-        value.addEventListener("mouseout", function () {
-            value.style.color = "black";
-        });
-
-        value.addEventListener("click", function () {
-            this.classList.toggle("Done");
-        })
-    })
-}
+});
