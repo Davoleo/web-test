@@ -1,4 +1,4 @@
-# first
+# game-manager
 
 ## Project setup
 ```
