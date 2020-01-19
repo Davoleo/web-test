@@ -1,4 +1,4 @@
-# game-manager
+# show-manager
 
 ## Project setup
 ```
