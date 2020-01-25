@@ -4,10 +4,10 @@ import BootstrapVue from "bootstrap-vue";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import './firebase';
-import VueFire from 'vuefire/dist/vuefire';
+import {rtdbPlugin} from 'vuefire';
 
 Vue.use(BootstrapVue);
-Vue.use(VueFire);
+Vue.use(rtdbPlugin);
 
 Vue.config.productionTip = false;
 

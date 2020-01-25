@@ -7,8 +7,9 @@
     <b-row>
       <b-col>
         <b-table striped hover :items="shows" :fields="fields">
-          <template slot="Genre" slot-scope="data">{{getGenre(data.item.Genre)}}</template>
-          <template slot="Studio" slot-scope="data">{{getStudio(data.item.Studio)}}</template>
+          <template slot="Title" slot-scope="data">{{data.items.Title}}</template>
+          <template slot="Genre" slot-scope="data">{{getGenre(data.items.Genres)}}</template>
+          <template slot="Studio" slot-scope="data">{{getStudio(data.items.Studio)}}</template>
           <template slot=" ">
             <b-btn size="sm" variant="warning">X</b-btn>&nbsp;
             <b-btn size="sm" variant="secondary">M</b-btn>
@@ -20,13 +21,14 @@
 </template>
 
 <script>
-  import {showsRef} from "./firebase"
+
+  import {showsRef} from "./firebase";
   import {GenreEnum, StudioEnum} from "./models/anime";
 
 //There should only be one export default{} - exports the object (which will be "cast" to a component once we render it on the page)
 export default {
   firebase: {
-    shows: showsRef.orderByChild("Title")
+    shows: []
   },
 
   data() {
@@ -34,7 +36,7 @@ export default {
       showStudios: StudioEnum.properties,
       showGenres: GenreEnum.properties,
       fields: ['Title', 'Genre', 'Studio', ' '],
-      shows: this.shows
+      shows: showsRef.orderByChild("Title")
     }
   },
 
