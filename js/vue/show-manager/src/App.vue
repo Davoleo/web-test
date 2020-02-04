@@ -36,7 +36,7 @@ export default {
       showStudios: StudioEnum.properties,
       showGenres: GenreEnum.properties,
       fields: ['Title', 'Genre', 'Studio', ' '],
-      shows: showsRef.orderByChild("Title")
+      shows: showsRef
     }
   },
 
