@@ -10,7 +10,8 @@
           <template slot="Title" slot-scope="data">{{data.items.Title}}</template>
           <template slot="Genre" slot-scope="data">{{getGenre(data.items.Genres)}}</template>
           <template slot="Studio" slot-scope="data">{{getStudio(data.items.Studio)}}</template>
-          <template slot=" ">
+          <!-- eslint-disable-next-line -->
+          <template slot=" " slot-scope="data">
             <b-btn size="sm" variant="warning">X</b-btn>&nbsp;
             <b-btn size="sm" variant="secondary">M</b-btn>
           </template>
