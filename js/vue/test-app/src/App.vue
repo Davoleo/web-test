@@ -37,6 +37,14 @@
             </template>
         </TodoList>
 
+        <br>
+        <hr>
+        <br>
+
+        <DynamicComponentsSection />
+
+
+
     </div>
 </template>
 
@@ -45,9 +53,11 @@ import TestAppParent from './components/TestAppParent'
 import TestAppButtons from "./components/TestAppButtons";
 import SlotTest from "./components/SlotTest";
 import TodoList from "./components/TodoList";
+import DynamicComponentsSection from "./components/dynamic/DynamicComponentsSection";
 
 export default {
     components: {
+        DynamicComponentsSection,
       TodoList,
       SlotTest,
       TestAppParent,
