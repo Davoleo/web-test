@@ -26,8 +26,45 @@ requireComponent.keys().forEach(
 );
 */
 
+//The errorCaptured function is a function that can be overriden on various levels and allows to customize error handling
+Vue.config.errorHandler = function (err, vm, info) {
+  alert(err + '#' + vm + '#' + info);
+}
+
 new Vue({
   render: h => h(App),
+  //Hook Functions
+  beforeCreate() {
+    alert("beforeCreate");
+  },
+  //After the creation of the instance and after the event listeners have started
+  created() {
+    alert('created');
+  },
+  //Before component rendering
+  beforeMount() {
+    alert('beforeMount');
+  },
+  //Right after component rendering
+  mounted() {
+    alert('mounted');
+  },
+  //Before DOM update
+  beforeUpdate() {
+    alert('beforeUpdate');
+  },
+  //after DOM update
+  updated() {
+    alert('updated');
+  },
+  //before Component destruction when Vue removes it from the DOM
+  beforeDestroy() {
+    alert('beforeDestroy');
+  },
+  //after Component destruction when Vue removes it from the DOM
+  destroyed() {
+    alert('destroyed');
+  }
 }).$mount('#app');
 
 console.log(Vue.version);
