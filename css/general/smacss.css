@@ -1,0 +1,94 @@
+/* Example Base Style Rules */
+/* Style that remain the same over all the pages */
+body, form {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #039;
+}
+
+a:hover {
+    color: #03F;
+}
+
+/* Layout Rules Examples */
+/* Major Layout Components */
+#header, #article, #footer {
+    width: 960px;
+    margin: auto;
+}
+
+#article {
+    border: solid #CCC;
+    border-width: 1px 0 0;
+}
+
+
+#article {
+    float: left;
+}
+
+#sidebar {
+    float: right;
+}
+
+.l-flipped #article {
+    float: right;
+}
+
+.l-flipped #sidebar {
+    float: left;
+}
+
+
+div#featured ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+div#featured li {
+    float: left;
+    height: 100px;
+    margin-left: 10px;
+}
+
+/* Module Rules Examples */
+/* The Inner Components of the page: (navbar, lists, cards, sets, stacks) */
+/* Purpose: To be re-usable and overridable */
+.module > h2 {
+    padding: 5px;
+}
+
+.module span {
+    padding: 5px;
+}
+
+.fld > .fld-name {
+    padding-left: 20px;
+    background: url(https://images.everyeye.it/img-notizie/playstation-5-trasforma-personaggio-anime-un-illustrazione-virale-v3-451457-1280x960.jpg);
+}
+
+.fld > .fld-items {
+
+}
+
+
+.pod {
+    width: 100%;
+}
+.pod input[type=text] {
+    width: 50%;
+}
+.pod-constrained input[type=text] {
+    width: 100%;
+}
+
+.pod-callout {
+    width: 200px;
+}
+.pod-callout input[type=text] {
+    width: 180px;
+}
