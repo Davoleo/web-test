@@ -92,3 +92,24 @@ div#featured li {
 .pod-callout input[type=text] {
     width: 180px;
 }
+
+/* Describe states of modules */
+/* Usually referring to stuff dynamically changed through JS code */
+/* Tab Module */
+.tab {
+    background-color: purple;
+    color: white;
+}
+/* Specific Tab State Rule */
+.is-tab-active {
+    background-color: white;
+    color: black;
+}
+
+/* Generic State Rule */
+.is-collapsed {
+    display: none;
+}
+
+/* Theme rules override/theme the previous rules even more */
+/* Sometimes there's no need of them */
