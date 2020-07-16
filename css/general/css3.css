@@ -1,23 +1,22 @@
-/*Per tutti i blocchi ul presenti dopo un blocco p*/
-p~ul {background: crimson;}
-
-/*Per tutti gli elementi che possiedono l'attributo id | Si può anche restringere il campo ad un certo elemento*/
-[id] {background: magenta;}
-
-/* '*=' : contiene | '=' è uguale a */
-a[href*=".net"] {background: lightgrey}
-
-/* '^=' : inizia con | '$=' finisce con */
-a[href^="https"] {background: palegreen}
-
 /*primo di quel tipo a seconda del suo genitore*/
-li:first-of-type {background: slategrey}
+li:first-of-type {
+    background-color: slategrey
+}
 
 /*l'ennesimo di quel tipo a seconda del suo genitore*/
-li:nth-of-type(2) {background: mediumseagreen}
+li:nth-of-type(2) {
+    background-color: mediumseagreen
+}
+
+/* nth of type */
+li:nth-of-type(odd) {
+    background-color: #778485;
+}
 
 /*ultimo di quel tipo a seconda del suo genitore*/
-li:last-of-type {background:antiquewhite}
+li:last-of-type {
+    background-color: antiquewhite
+}
 
 /* Cover: l'importante è che copra tutto lo spazio disponibile, se poi viene tagliata fa lo stesso */
 /* Contain: l'importante è che l'immagine si veda tutta, se poi ci sono dell bande bianche fa lo stesso */
@@ -55,8 +54,8 @@ body {
     src: url('../../font/ITCBLKAD.ttf')
 }
 
-/* Main Selectors */
-/* Element Selectors*/
+/* CSS Selectors */
+/* Element Selector */
 li {
     border: 2px solid #34495e;
 }
@@ -65,31 +64,56 @@ li {
     text-decoration: line-through;
 }
 
-/*ID Selectors*/
+/*ID Selector */
 #specialLi {
     background-color: #1f8b4d;
 }
 
-/* Star Selector (Selects EVERYTHING) */
+/* Star (Universal) Selector (Selects EVERYTHING) */
+/* Used to reset default styles such as: removing margin, set box-sizing  */
 * {
     border: 1px solid lightgray;
 }
 
-/* Descending Selectors */
+/* Descending Selector */
 li label {
     background-color: #3498db;
 }
-/* Adjacent Selectors* (Select h1 siblings)*/
-h1 + ul {
-    color: #102399;
+
+/* Direct Children Selector - Selects all lis directly inside of a ul element */
+ul > li {
 }
 
-/* Attribute Selector */
+/* Adjacent Sibling Selector* (selects all uls that have an h2 element RIGHT before them)*/
+h2 + ul {
+    margin-left: 100px;
+}
+
+/* General Sibling Selector (selects all uls that have an ul element before them somewhere in the DOM) */
+ul ~ ul {
+    background-color: crimson;
+}
+
+/* Attribute Selectors */
 input[type="checkbox"] {
     background-color: #7c4792;
 }
 
-/* nth of type */
-li:nth-of-type(odd) {
-    background-color: #778485;
+/*Per tutti gli elementi che possiedono l'attributo id | Si può anche restringere il campo ad un certo elemento*/
+[id] {background: magenta;}
+
+/* '*=' : contains | '=' is equal to */
+a[href*=".net"] {
+    background-color: lightgrey
+}
+
+/* '|=' : starts with until some separator char (-) | '^=' : starts with | '$=' ends with */
+a[href^="https"] {
+    background-color: palegreen
+}
+
+a[target="_blank"]::after {
+    content: url("//unsplash.it/20/20");
+    display: inline-block;
+    margin-left: 5px;
 }
