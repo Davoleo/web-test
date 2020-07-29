@@ -31,6 +31,14 @@ Vue.config.errorHandler = function (err, vm, info) {
   alert(err + '#' + vm + '#' + info);
 }
 
+//Global filters
+Vue.filter(
+    'upper',
+    function (value) {
+      return value.toUpperCase();
+    }
+)
+
 new Vue({
   render: h => h(App),
   //Hook Functions

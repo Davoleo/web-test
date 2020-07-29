@@ -43,8 +43,11 @@
 
         <DynamicComponentsSection />
 
+        <br>
+        <hr>
+        <br>
 
-
+        <FilterTest />
     </div>
 </template>
 
@@ -54,14 +57,16 @@ import TestAppButtons from "./components/TestAppButtons";
 import SlotTest from "./components/SlotTest";
 import TodoList from "./components/TodoList";
 import DynamicComponentsSection from "./components/dynamic/DynamicComponentsSection";
+import FilterTest from "@/components/FilterTest";
 
 export default {
     components: {
+        FilterTest,
         DynamicComponentsSection,
-      TodoList,
-      SlotTest,
-      TestAppParent,
-      TestAppButtons
+        TodoList,
+        SlotTest,
+        TestAppParent,
+        TestAppButtons
     },
 
     data() {
