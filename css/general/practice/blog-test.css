@@ -7,7 +7,7 @@ font: source sans pro
 */
 
 body {
-    width: 1000px;
+    max-width: 1000px;
     border: 25px solid #BDC3C7;
     padding: 20px;
     margin: 20px auto;

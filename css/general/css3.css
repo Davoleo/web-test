@@ -1,11 +1,11 @@
 /*primo di quel tipo a seconda del suo genitore*/
 li:first-of-type {
-    background-color: slategrey
+    background-color: slategrey;
 }
 
 /*l'ennesimo di quel tipo a seconda del suo genitore*/
 li:nth-of-type(2) {
-    background-color: mediumseagreen
+    background-color: mediumseagreen;
 }
 
 /* nth of type */
@@ -15,7 +15,7 @@ li:nth-of-type(odd) {
 
 /*ultimo di quel tipo a seconda del suo genitore*/
 li:last-of-type {
-    background-color: antiquewhite
+    background-color: antiquewhite;
 }
 
 /* Cover: l'importante è che copra tutto lo spazio disponibile, se poi viene tagliata fa lo stesso */
@@ -42,16 +42,18 @@ body {
     text-decoration: underline;
     text-align: center;
     font-family: Indie Flower, serif;
-    background-color:burlywood;
-    background-clip: border-box
+    background-color: burlywood;
+    background-clip: border-box;
 }
 
 /* parameters {traslazione orizzontale | traslazione verticale | } */
-.EffettiTesto {text-shadow: 2px 2px 8px #00ff00}
+.EffettiTesto {
+    text-shadow: 2px 2px 8px #00ff00;
+}
 
 @font-face {
     font-family: font-tremante;
-    src: url('../../font/ITCBLKAD.ttf')
+    src: url('../../font/ITCBLKAD.ttf');
 }
 
 /* CSS Selectors */
@@ -100,16 +102,18 @@ input[type="checkbox"] {
 }
 
 /*Per tutti gli elementi che possiedono l'attributo id | Si può anche restringere il campo ad un certo elemento*/
-[id] {background: magenta;}
+[id] {
+    background: magenta;
+}
 
 /* '*=' : contains | '=' is equal to */
 a[href*=".net"] {
-    background-color: lightgrey
+    background-color: lightgrey;
 }
 
 /* '|=' : starts with until some separator char (-) | '^=' : starts with | '$=' ends with */
 a[href^="https"] {
-    background-color: palegreen
+    background-color: palegreen;
 }
 
 a[target="_blank"]::after {
