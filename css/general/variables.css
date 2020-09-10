@@ -1,0 +1,30 @@
+/*
+    Custom Properties always start with 2 dashes
+    They are defined in the root element of the page so they can be used globally throughout the website
+*/
+:root {
+    --name: value;
+    --primary-color: #456;
+    --secondary-color: salmon;
+}
+
+body {
+    /* Using CSS variables */
+    color: var(--primary-color);
+}
+
+h1 {
+    /* you can redifine your variables but it can be dangerous */
+    --primary-color: #234;
+    color: var(--primary-color);
+}
+
+.intro {
+    color: var(--secondary-color);
+}
+
+.fab {
+    /* Will use the second option as a fallback in case something goes wrong with the first param */
+    background-color: var(--secondary-color, yellow);
+}
+
