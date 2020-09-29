@@ -1,11 +1,29 @@
 /*
     Custom Properties always start with 2 dashes
     They are defined in the root element of the page so they can be used globally throughout the website
+
+    Keeps all the controls of the website in one place
+
+    Some nice uses for CSS variables may be to keep the properties consistent and to create standard values
+    primary, secondary, accent colors
+    standard spacers
+    standard shadows
+    border radius
+    font family
 */
 :root {
+    --ff: 'Nunito', sans-serif;
+
     --name: value;
     --primary-color: #456;
     --secondary-color: salmon;
+
+    --spacer: 1rem;
+    --spacer-md: calc(var(--spacer) * 2);
+    --spacer-lg: calc(var(--spacer) * 3);
+
+    --shadow: 0 0 1em rgba(0, 0, 0, .25);
+    --border-radius: 5px
 }
 
 body {
@@ -15,6 +33,7 @@ body {
 
 h1 {
     /* you can redifine your variables but it can be dangerous */
+    /* It is useful in cases when you have a special modified component */
     --primary-color: #234;
     color: var(--primary-color);
 }
