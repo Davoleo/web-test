@@ -1,0 +1,62 @@
+.flex-parent {
+    display: flex;
+    flex-direction: column;
+    /* Still not supported on Safari */
+    /*gap: 3em;*/
+}
+
+/* A way to replicate the gap between flexbox elements */
+.flex-parent > * + * {
+    margin: 3em 0 0 0;
+}
+
+@media (min-width: 60em) {
+    .flex-parent {
+        flex-direction: row;
+    }
+
+    /* You also need to override the margin wether you have items in rows or columns since it won't automatically adapt */
+    .flex-parent > * + * {
+        margin: 0 0 0 3em;
+    }
+}
+
+/* Content styling */
+:root {
+    --color-primary: #ee6352;
+    --color-body: #333;
+    --color-bg: #ddd;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125em;
+    line-height: 1.6;
+    color: var(--color-body);
+    background-color: white;
+    margin-top: 5em;
+}
+
+.flex-parent > * {
+    padding: 1em;
+    background: #234;
+    outline: 5px solid limegreen;
+    color: white;
+}
+
+.content {
+    width: 70vw;
+    padding: 3em;
+    border: 2px var(--color-bg) solid;
+    box-shadow: 0 0 3em rgba(0,0,0,.15);
+}
+
+.title {
+    margin: 0 0 .5em;
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: .8;
+}
