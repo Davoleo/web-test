@@ -10,11 +10,13 @@
 
 	<p>
 		<label for="cognome">Nickname</label>
+		<!-- required makes sure you fill in the field before Submitting the form -->
 		<input required autocomplete="on" placeholder="ItHurtsLikeHell" autofocus style="background-color: yellow" type="text" name="cognome" id="cognome"/>
 	</p>
 	<p>
 		<label for="nome"> Nome VERO </label>
-		<input required placeholder="GESU'" size="15px" maxlength="15" style="background-color: yellow" type="text" name="nome" id="nome"/>
+		<!-- minlength and maxlength make sure the input is at least 3 and less than 16 -->
+		<input required placeholder="GESU'" size="15px" minlength="3" maxlength="15" style="background-color: yellow" type="text" name="nome" id="nome"/>
 	</p>
 	<p>
 		<label for="email"> Email </label>
@@ -22,16 +24,18 @@
 	</p>
 	<p>
 		<label for="password">p455w0rd</label>
+		<!-- You can specify a pattern through regex -->
 		<input type="password" placeholder="passwording the password" name="password" id="password" style="background-color: yellow" />
 	</p>
 	<p>
 		<label for="credit_card_number">Numero Carta di credito</label>
 		<input size="16" maxlength="16" style="background-color: yellow;" placeholder="non so dimmi tu :)" type="text" name="credit_card_number" id="credit_card_number" required/>
 	</p>
+	<!-- To connect Radio butto you can give them the same name -->
 	<p>Sesso
-	<label>Maschio<input type="radio" name="SessoRadio" value="maschio"/></label>
-	<label>Femmina<input type="radio" name="SessoRadio" value="femmina"/></label>
-	<label>Non Specificato<input type="radio" name="SessoRadio" value="non_specificato"/></label>
+		<label>Maschio<input type="radio" name="SessoRadio" value="maschio"/></label>
+		<label>Femmina<input type="radio" name="SessoRadio" value="femmina"/></label>
+		<label>Non Specificato<input type="radio" name="SessoRadio" value="non_specificato"/></label>
 	</p>
 
 	<p>Hobby
@@ -107,7 +111,8 @@
 	<input type="hidden" name="userCode" id="userCode" value="19283">
 
 	<input type="image" src="../resources/img/excuse_me_wtf.jpg" alt="Submit" width="48" height="48"/><br/>
-	<input type="submit" value="INVIAMI I DATI" name="registra" formaction="elaboraDati.php" formtarget="_blank"/>
+	<!--	The default for a button inside a form is to submit data (although you can override it through the type attr) -->
+	<button type="submit" name="registra" formaction="elaboraDati.php" formtarget="_blank">INVIAMI I DATI</button>
 	<input type="reset" value="CLS" name="reset">
 
 </form>
