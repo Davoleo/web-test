@@ -80,9 +80,11 @@ body {background-color: #99FF99;}
 	<li> quarto elemento </li>
 </ol>
 
-<!-- Tabelle -->
+<!-- Tables -->
+<!-- tr = table row | td = table cell | th = table header cell -->
 <table border="1">
 
+	<!-- wraps the table header -->
 	<thead>
 		<tr>
 			<th> prima colonna </th>
@@ -93,6 +95,7 @@ body {background-color: #99FF99;}
 		</tr>
 	</thead>
 
+	<!-- the main content of the table (data) -->
 	<tbody>
 		<tr>
 			<td> 1,1 </td>
@@ -117,8 +120,9 @@ body {background-color: #99FF99;}
 		</tr>
 	</tbody>
 
+	<!-- wraps the table footer -->
 	<tfoot>
-		<td colspan="5"> Note a pié pagina </td>
+		<tr><td colspan="5"> Note a pié pagina </td></tr>
 	</tfoot>
 </table>
 
