@@ -96,8 +96,8 @@ ul ~ ul {
     background-color: crimson;
 }
 
-/* Attribute Selectors */
-input[type="checkbox"] {
+/* Attribute Selectors | Styles any checkbox input that is checked (pseudo-class checked also works with radio buttons) */
+input[type="checkbox"]:checked {
     background-color: #7c4792;
 }
 
@@ -116,6 +116,7 @@ a[href^="https"] {
     background-color: palegreen;
 }
 
+/* Pseudo Elements (style certain parts of an element) [after used to a certain content after the element] */
 a[target="_blank"]::after {
     content: url("//unsplash.it/20/20");
     display: inline-block;
