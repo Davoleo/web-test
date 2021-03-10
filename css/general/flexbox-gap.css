@@ -45,6 +45,14 @@ body {
     background: #234;
     outline: 5px solid limegreen;
     color: white;
+
+    /* Sets the width or the height depending on the main axis orientation (more flexible in flexbox structures) */
+    /*flex-basis: 200px;*/
+    /* Controls whether the child container should extend to unused space (they can become larger than the basis) */
+    /* the number controls the proportion of how much they grow depending on other flex-grow elements */
+    /*flex-grow: 1;*/
+    /* Works the same as flex-grow but it's a multiplier to shrink when there isn't enough space for all the elements to fit*/
+    /*flex-shrink: 0;*/
 }
 
 .content {
