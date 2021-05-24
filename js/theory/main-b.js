@@ -218,9 +218,20 @@ document.write(people.indexOf("EpicSquid") + "<br>");  //3
 
 document.write(people.indexOf("Mcjty") + "<br><br>");      //-1
 
-//SLICE: copies a portion of an array - lower bound (inclusive) - upper bound (exclusive)
+//SLICE: copies a copy of a portion of an array - lower bound (inclusive) - upper bound (exclusive)
 var stossoTeam = people.slice(0, 3);
 document.write("Stosso Team: " + stossoTeam + "<br><br>");
+//Using negative number instead of the first bound will slice the last |upperBounds| values of the array
+
+//SPLICE: modifies the array by removing, replacing or adding new elements in place
+//Parameters are: The index at which we're working, the elements to delete, the elements to insert
+//Returns an array of all the removed items
+let months = ['January', 'March', 'April', 'June'];
+document.write("Months: " + months + "<br>");
+//Inserts at index one the items (last arguments)
+months.splice(1, 0, 'February');
+months.splice(3, 1, 'May');
+document.write("Months: " + months + "<br><br>");
 
 //Prompts --------------------------------------------------
 
