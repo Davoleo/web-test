@@ -96,3 +96,13 @@ function makeBetweenFunc(min, max) {
 makeBetweenFunc(50, 100)(40);
 
 console.log("This is: " + this)
+
+//Catch Errors from any line of could that could cause the script to crash
+//Protects the program and gives the user a reasonable error message
+try {
+    nonExistingThing.toUpperCase();
+}
+catch (e) {
+    document.write("I caught an error :o<br>")
+    //console.log(e.name);
+}
