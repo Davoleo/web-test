@@ -54,3 +54,45 @@ function validate() {
     else
         alert("the checkbox is not checked");
 }
+
+/**
+ * Functions in functions
+ * The inner function has access to the outer scope function local variables
+ * you always need to call inner functions to be executed anyways
+ */
+function outerFunc() {
+    const test = ["con", "fet", "ti"];
+    function innerFunc() {
+        document.write(test.join("") + " are really poggers!<br>")
+    }
+    innerFunc();
+}
+
+outerFunc();
+
+/**
+ * Function that calls a function twice
+ * @param fun the function to be executed
+ */
+function higherOrderFuncExample(fun) {
+    fun();
+    fun();
+}
+function rollDice() {
+    const roll = Math.floor((Math.random() * 6) + 1);
+    document.write("Roll is: " + roll + "<br>")
+}
+higherOrderFuncExample(rollDice);
+
+/**
+ * Function that returns a function to test if a number is between min and max
+ * @returns {function(number)} that tests wether the number is between min and max
+ */
+function makeBetweenFunc(min, max) {
+    return function (num) {
+        return num > min && num <= max;
+    }
+}
+makeBetweenFunc(50, 100)(40);
+
+console.log("This is: " + this)
