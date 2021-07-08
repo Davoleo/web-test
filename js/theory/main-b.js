@@ -257,11 +257,46 @@ window.onload = () => ("JESUS likes you");
 
 // Iterating over arrays ------------------------
 for (var i = 0; i < people.length; i++) {
-    document.write(people[i] + "<br/>");
+    document.write(people[i] + "<br>");
 }
-document.write("<br/>");
+document.write("<br>");
 
+//arrow functions are a newer syntax to create anonymous funcions (functions expressions)
+//When you use 'this' inside ARROW => functions it doesn't refer to the calling object but to the object the function was defined in
+//Arrow functions x forEach ------------
 people.forEach(value => {
-    document.write(value + "<br/>");
+    document.write(value + "<br>");
 });
-document.write("<br/>");
+document.write("<br>");
+
+//Array map (maps an array from a state to another) -------------
+people.map(function(person) {
+    return person.toUpperCase();
+}).forEach(val => document.write(val + '<br>'));
+document.write("<br>");
+
+//Array filter (subset of an array into a new array)
+//Run for each element, if the callback returns true the element is added to the subset otherwise it's not
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const oddNums = nums.filter(el => el % 2 != 0);
+nums.forEach(num => document.write(`${num}, `));
+document.write("<br>");
+nums.forEach(oddNums => document.write(`${num}, `));
+document.write("<br>");
+document.write("<br>");
+
+//some and every (they are boolean methods)
+//shorthand syntax to evaluate a test on every element and return wether EVERY element passes the test or SOME element passes the test
+nums.every(num => num > 0);   //true
+nums.some(num > 10);          //false
+
+//Reduces an array to 1 element via a reducer function
+//The reducer function will have 
+//an accumulator as the first parameter which is the return value of the last iteration of the function
+//the current value of the iteration as the second parameter 
+//You can specify an identity (initial value for the accumulator) [after the reducer function]
+const total = nums.reduce((sum, current) => sum + current);
+document.write(`nums total ${total}<br>`);
+const max = nums.reduce((max, current) => Math.max(max, current));
+document.write(`nums max ${max}<br>`);
+document.write('<br>');

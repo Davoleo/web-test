@@ -25,8 +25,15 @@ function printTime() {
     document.getElementById("date").setAttribute("value", hours + ":" + mins + ":" + seconds)
 }
 
-//Calls the printTime function every 1000 milliseconds
-setInterval("printTime()", 1000);
+//Will run one time after 3000 milliseconds
+setTimeout(() => {
+    document.write("Delayed Thiing!<br>");
+}, 3000);
+
+//Calls the printTime function every 1000 milliseconds (gives an id corresponding to the interval)
+const intervalId = setInterval(printTime, 1000);
+//Stops the interval timer that was previously started
+//clearInterval(intervalId);  
 
 document.write("<br><br>" + "--------------------------------------------------------------------------------------" + "<br><br>");
 
