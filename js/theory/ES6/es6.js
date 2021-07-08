@@ -140,13 +140,19 @@ let arr = {h: 100, s: true};
 let {h, s} = arr;
 document.write(h + " " + s + "<br><br>");
 
+//The arguments obj is a strange array object that contains all passed arguments by default
+function addAll() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++)
+        sum += arguments[i];
+    return sum;
+}
+//To avoid using arguments we can just use Rest Parameters which becomes an actual array, which is why we'll be able to use array methods on it
 //Rest Parameters
 //Takes an array of parameters || multiple parameters
+//literally same thing as VARARGS
 function addAll(...nums) {
-    let sum = 0;
-    for (let i = 0; i < nums.length; i++)
-        sum += nums[i];
-    return sum;
+    nums.reduce((total, el) => total + el);
 }
 
 //Spread Operataor
