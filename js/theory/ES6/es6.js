@@ -77,7 +77,8 @@ console.log("Circle area is " + circleAreaArrow(7));
 
 //---------------------------------------------------------------------------------------------
 //DEAFAULT PARAMETERS
-//You can assign default value to a function parameter
+//You can assign default value to a function parameter in case they're not passed they will have that value instead of undefined
+//Optional parameters should always be after required params (otherwise they won't work because of the order)
 function addABC(a, b = 3, c = 111) {
     return a + b + c;
 }
@@ -154,9 +155,24 @@ function addThreeNums(a, b, c) {
     return a + b + c;
 }
 
+// Spreads the array into 3 vars
 let nums = [3, 4, 5];
 addThreeNums(...nums);
-// Spreads the array into 3 vars
+
+//You can spread iterables (which means also strings can be spread into chars)
+console.log(..."hello");
+
+//Spread into array literals
+const firstHalf = [1, 2, 4, 2, 59];
+const secondHalf = [9, 4, 9, 1];
+const fusion = [...firstHalf, ...secondHalf];
+
+//Spread into objects
+//Since person has the age key it will be overwritten by the second property we're adding
+const editedPerson = {...person, age: 20, email: 'blackjack@gmail.com', isAdmin: false};
+
+//Will spread the array into the object using indices as they keys (same thing with strings)
+const array2Obj = {...[2, 4, 6, 8, 10]};
 
 //-----------------------------------------
 /**
