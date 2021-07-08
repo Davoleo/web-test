@@ -130,15 +130,27 @@ console.log(newStudentPerson);
 let newPerson = Object.assign({}, person);
 //let newPerson = person;
 
-//Array Destructuring
+//Destructuring Arrays
+//Creates multiple variables from an array
 let sampleArray = [1, 2, 3, 4];
-let [one, two, three, four] = sampleArray;
+let [ one, two, three, four ] = sampleArray;
 document.write(one + " " + two + " " + three + " " + four + " <br>");
 
-//Array Destructuring
+//Destructuring Objects
 let arr = {h: 100, s: true};
-let {h, s} = arr;
+//Creates multiple variables from an object (depending on the property name)
+//You can also rename those properties writing "propName: varName"
+//If you try to get a prop that doesn't exist by default the variable will be undefined, but you can give it a default value just like with parameters (propName: varName = "N/A")
+let { h, s } = arr;
 document.write(h + " " + s + "<br><br>");
+
+//Destructuring Parameters
+//Expects just an object that has name and age properties nothing more nothing less
+//You can also add default values
+function fullName({ name, age = 18}) {
+    return `${name}, ${age}`;
+}
+fullName(newPerson);
 
 //The arguments obj is a strange array object that contains all passed arguments by default
 function addAll() {
