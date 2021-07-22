@@ -44,6 +44,8 @@ let querySelectedItem = document.querySelector("h1");
 let highlightedText = document.querySelector("#highlight");
 highlightedText.style.backgroundColor = "#FFFF00";
 
+//The style object can be used to set simple things (will set style attribute inline)
+//Also can't be used as a getter unless you want to get in-line styles
 var isBlue = false;
 setInterval(function () {
     if (isBlue)
@@ -53,6 +55,24 @@ setInterval(function () {
     isBlue = !isBlue;
 }, 500);
 
+//This Method allows to retrieve the Computed Style declaration for a specific element, 
+//which means JS will be able to get all the styles even the ones applied externally
+window.getComputedStyle(highlightedText);
+
+//Traversing the DOM Tree
+//Get the parent of the element
+querySelectedItem.parentElement;
+
+//The number of children of a given element
+highlightedText.childElementCount;
+//an HTML Collection of children elements
+highlightedText.children;
+
+//and previous / Returns the html element adjacent next or previous to this element
+highlightedText.nextElementSibling;
+
+//Return "Text Nodes" which are weird text stuff the browser uses to organize whitespace (same thing for childNodes)
+highlightedText.nextSibling;
 
 function changeElements() {
     //This will show all the content of the body
@@ -71,18 +91,36 @@ function changeElements() {
     var googleLink = document.querySelector("a");
 
     //Getter and Setter for HTML Attributes
+    //Using getAttribute and setAttribute will work with the exact content of attributes in HTML
+    //While using the javascript property will pass through the DOM objects meaning they could have different results
     console.log(googleLink.getAttribute("href"));
     googleLink.setAttribute("href", "https://davoleo.github.io");
+    //googleLink.href = "https://davoleo.net"
 }
 
 function createElements() {
     let div = document.getElementById("container");
 
-    //Attach some node to another
+    //Steps
+    //Create the element and store it
     let paragraph = document.createElement("p");
+
+    //To add inner text content you can also used innerText/TextContent and all those properties instead of creating Text nodes
+    //Fill it with attributes and content / information
     let node = document.createTextNode("Example text node generated automatically using javascript");
+    //Attach the newly created text node to the paragraph
     paragraph.appendChild(node);
+
+    //append() and prepend() are just like appendChild and insertBefore but they are more flexible to use with more than 1 elements and with text
+    //They don't work in IE though
+
+    //You can also use insertAdjacentElement (see MDN)
+
+    //Append the paragraf to the div on the page
     div.appendChild(paragraph);
+
+    //Using .after() inserts nodes after another element (no IE)
+    //Using .before() inserts nodes before another element (no IE)
 
     //insertBefore(): Inserts the first argument's node before the second argument's node
     let buttonCreate = document.getElementById("buttonCreate");
@@ -93,7 +131,10 @@ function createElements() {
 function removeElements() {
     let child = document.getElementById("testHeader");
     //Removes testHeader (The child element of the first paragraph)
+    //Yep, it needs to be called on the parent ._.
     child.parentNode.removeChild(child);
+
+    //.remove() removes the same node the method is called on (no IE)
 }
 
 function replaceElements() {
