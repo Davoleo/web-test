@@ -157,55 +157,69 @@ document.querySelector("ul").addEventListener("click", function () {
 });
 
 // Score Keeper ---------------------------------
-var button1 = document.getElementById("button1");
-var button2 = document.getElementById("button2");
-var resetButton = document.querySelector("#reset-button");
+const resetButton = document.querySelector("#reset-button");
+let gameOver;
+const limitBox = document.querySelector("input");
+const limitSpan = document.querySelector("p>span");
+let limit = Number(limitBox.value);
+limitSpan.textContent = limit;
 
-var span1 = document.getElementById("score1");
-var span2 = document.getElementById("score2");
 
-var gameOver;
-var limitBox = document.querySelector("input");
-var limit = Number(limitBox.value);
-document.querySelector("p>span").textContent = limit;
-
-var score1 = 0;
-var score2 = 0;
-
-button1.addEventListener("click", function () {
-    if (!gameOver) {
-        score1++;
-        if (score1 === limit) {
-            gameOver = true;
-            span1.classList.add("Winner");
-        }
-        span1.textContent = score1.toString();
+let players = [
+    {
+        button: document.getElementById("button1"),
+        scoreSpan: document.getElementById("score1"),
+        score: 0
+    },
+    {
+        button: document.getElementById("button2"),
+        scoreSpan: document.getElementById("score2"),
+        score: 0
     }
-});
+]
 
-button2.addEventListener("click", function () {
-    if (!gameOver) {
-        score2++;
-        if (score2 === limit) {
-            gameOver = true;
-            span2.classList.add("Winner");
-        }
-        span2.textContent = score2.toString();
+players.forEach((player, index) => player.button.addEventListener("click", () => increaseScore(index)));
+
+function increaseScore(playerIndex) {
+    let player = players[playerIndex];
+    player.score++;
+    player.scoreSpan.textContent = player.score.toString();
+    checkGameOver();
+}
+
+function checkGameOver() {
+    
+    if (players[0].score === limit) {
+        players[0].scoreSpan.classList.add("Winner");
+        players[1].scoreSpan.classList.add("Loser");
+        gameOver = true;
     }
-});
+    else if (players[1].score === limit) {
+        players[1].scoreSpan.classList.add("Winner");
+        players[0].scoreSpan.classList.add("Loser");
+        gameOver = true;
+    }
+
+    if (gameOver) {
+        players[0].button.disabled = true;
+        players[1].button.disabled = true;
+    }
+}
+
 
 resetButton.addEventListener("click", reset);
 
 function reset() {
-    score1 = 0;
-    score2 = 0;
-    span1.textContent = "0";
-    span2.textContent = "0";
-    span1.classList.remove("Winner");
-    span2.classList.remove("Winner");
+    players.forEach(player => {
+        player.score = 0;
+        player.scoreSpan.textContent = "0";
+        player.scoreSpan.classList.value = "";
+        player.button.disabled = false;
+    });
     gameOver = false;
 }
 
+//the 'this' keyword in functions passed to the addEventListener method refers to the object where the event is handled
 limitBox.addEventListener("change", function () {
     document.querySelector("p>span").textContent = this.value;
     limit = Number(this.value);
